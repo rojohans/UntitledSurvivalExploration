@@ -1,0 +1,45 @@
+@startuml
+
+title Allowed dependencies
+
+package Data <<Database>>{
+}
+
+package Functionality <<Rectangle>>{
+}
+
+package Graphics <<Rectangle>>{
+}
+
+package Utility <<Rectangle>>{
+}
+
+package "<<external>>\n    Unity" as Unity <<Cloud>>{
+}
+
+package Events <<Rectangle>>{
+}
+
+class Main
+
+'--------------------------------
+
+Functionality --> Data
+Functionality --> Utility
+Functionality --> Graphics
+
+
+Data --> Utility
+
+Main --> Data
+Main --> Utility
+Main --> Events
+
+Graphics --> Unity
+Graphics --> Utility
+
+Events --> Functionality 
+Events --> Graphics 
+Events --> Utility
+
+@enduml

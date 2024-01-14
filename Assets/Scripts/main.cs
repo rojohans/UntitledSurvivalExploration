@@ -1,3 +1,9 @@
-//
-// Main program should be implemented here.
-//
+
+// usea: Untitled Survival Exploration Adventure
+namespace usea
+{
+    class Main
+    {
+        //
+    }
+}
