@@ -1,5 +1,3 @@
-Summary:
-Main.cs is run when the program starts.
 
 Namespaces:
 usea
