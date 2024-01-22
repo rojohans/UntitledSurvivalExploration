@@ -20,12 +20,12 @@ namespace usea
 
         private void initializeStuff()
         {
-            m_eventExample = new events.EventExample();
-            m_eventExample.initialize();
+            // m_eventExample = new events.EventExample();
+            // m_eventExample.initialize();
 
             data.Database.initialize();
         }
 
-        private events.EventExample m_eventExample;
+        //private events.EventExample m_eventExample;
     };
 }
