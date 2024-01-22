@@ -2,9 +2,6 @@
 // usea: Untitled Survival Exploration Adventure
 
 
-using usea.events; /// #include EventsExample.cs
-using usea.data; /// #include DataExample.cs
-
 namespace usea
 {
 
@@ -23,12 +20,12 @@ namespace usea
 
         private void initializeStuff()
         {
-            m_eventExample = new EventExample();
+            m_eventExample = new events.EventExample();
             m_eventExample.initialize();
 
-            Database.initialize();
+            data.Database.initialize();
         }
 
-        private EventExample m_eventExample;
+        private events.EventExample m_eventExample;
     };
 }

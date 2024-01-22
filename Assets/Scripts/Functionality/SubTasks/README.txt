@@ -1,9 +1,7 @@
 Summary:
-Implements the main logic of the program.
+Implements parts of logic that is too big to have in single services.
 
 Contains:
-usea.core.engine
-usea.core.service
 usea.core.subService
 
 Allowed dependencies:
