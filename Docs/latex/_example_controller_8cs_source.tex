@@ -1,0 +1,47 @@
+\doxysection{Example\+Controller.\+cs}
+\hypertarget{_example_controller_8cs_source}{}\label{_example_controller_8cs_source}\index{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/ExampleMenu/ExampleController.cs@{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/ExampleMenu/ExampleController.cs}}
+\mbox{\hyperlink{_example_controller_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceusea_1_1graphics_1_1model}{usea.graphics.model}};}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceusea_1_1graphics_1_1view}{usea.graphics.view}};}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceusea_1_1graphics_1_1controller}{usea.graphics.controller}}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00009}\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller}{ExampleController}}\ :\ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller}{Controller}}<ExampleModel,\ ExampleView>}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00011}\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a15065f82c1d73661c7bc70f7ab74e9ae}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a15065f82c1d73661c7bc70f7ab74e9ae}{Initialize}}()}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Initialize"{}});}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a843908cffe3160826095c135512c137e}{m\_view}}.m\_button.onClick.AddListener(\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a947a7895793f02d7b259d1046191c204}{OnButtonPress}});}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00017}\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a7018bdd35b8d71785c824488331da1b8}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a7018bdd35b8d71785c824488331da1b8}{Show}}()}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Show"{}});}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a843908cffe3160826095c135512c137e}{m\_view}}.UpdateBar(\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a954e9ca7867ce3096849b7d8327732ac}{m\_model}}.GetChargeRate());}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00023}\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_aefe3b534782490a3928cfa32d8b55b2e}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_aefe3b534782490a3928cfa32d8b55b2e}{Hide}}()}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Hide"{}});}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00028}\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a947a7895793f02d7b259d1046191c204}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_a947a7895793f02d7b259d1046191c204}{OnButtonPress}}()}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}OnButtonPress"{}});}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a954e9ca7867ce3096849b7d8327732ac}{m\_model}}.IncreaseCharge(1);}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a843908cffe3160826095c135512c137e}{m\_view}}.UpdateBar(\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a954e9ca7867ce3096849b7d8327732ac}{m\_model}}.GetChargeRate());}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00035}\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_ae1b13f15aad378fde209dbca5a2ca505}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_example_controller_ae1b13f15aad378fde209dbca5a2ca505}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a954e9ca7867ce3096849b7d8327732ac}{m\_model}}.DecreaseCharge(Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a843908cffe3160826095c135512c137e}{m\_view}}.UpdateBar(\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_controller_a954e9ca7867ce3096849b7d8327732ac}{m\_model}}.GetChargeRate());}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_example_controller_8cs_source_l00041}00041\ \}}
+
+\end{DoxyCode}

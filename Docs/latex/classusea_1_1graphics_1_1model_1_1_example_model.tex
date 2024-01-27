@@ -1,0 +1,148 @@
+\doxysection{usea.\+graphics.\+model.\+Example\+Model Class Reference}
+\hypertarget{classusea_1_1graphics_1_1model_1_1_example_model}{}\label{classusea_1_1graphics_1_1model_1_1_example_model}\index{usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}}
+
+
+Inheritance diagram for usea.\+graphics.\+model.\+Example\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classusea_1_1graphics_1_1model_1_1_example_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for usea.\+graphics.\+model.\+Example\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classusea_1_1graphics_1_1model_1_1_example_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_a2c611d3fbab4ad901fb1a87796e73eea}{Increase\+Charge}} (float charge\+Increase)
+\item 
+void \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_a81db90fd1d7a59ae52c7327a762081fe}{Decrease\+Charge}} (float charge\+Decrease)
+\item 
+float \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_a37b5e0c28a0f6ffeba2f05b027db7be2}{Get\+Charge\+Rate}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}{m\+\_\+remaining\+Charge}} = 5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_abe6a81ef2dcd7b0eefa9c60c766e2a7d}{MAX\+\_\+\+CHARGE}} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_example_model_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_example_model_8cs_source}{Example\+Model.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classusea_1_1graphics_1_1model_1_1_example_model_a81db90fd1d7a59ae52c7327a762081fe}\label{classusea_1_1graphics_1_1model_1_1_example_model_a81db90fd1d7a59ae52c7327a762081fe} 
+\index{usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}!DecreaseCharge@{DecreaseCharge}}
+\index{DecreaseCharge@{DecreaseCharge}!usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}}
+\doxysubsubsection{\texorpdfstring{DecreaseCharge()}{DecreaseCharge()}}
+{\footnotesize\ttfamily void usea.\+graphics.\+model.\+Example\+Model.\+Decrease\+Charge (\begin{DoxyParamCaption}\item[{float}]{charge\+Decrease }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_example_model_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_example_model_8cs_source}{Example\+Model.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}{m\_remainingCharge}}\ =\ Math.Max(0,\ \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}{m\_remainingCharge}}\ -\/\ chargeDecrease);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_example_model_8cs_source_l00026}{usea.\+graphics.\+model.\+Example\+Model.\+m\+\_\+remaining\+Charge}}.
+
+\Hypertarget{classusea_1_1graphics_1_1model_1_1_example_model_a37b5e0c28a0f6ffeba2f05b027db7be2}\label{classusea_1_1graphics_1_1model_1_1_example_model_a37b5e0c28a0f6ffeba2f05b027db7be2} 
+\index{usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}!GetChargeRate@{GetChargeRate}}
+\index{GetChargeRate@{GetChargeRate}!usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}}
+\doxysubsubsection{\texorpdfstring{GetChargeRate()}{GetChargeRate()}}
+{\footnotesize\ttfamily float usea.\+graphics.\+model.\+Example\+Model.\+Get\+Charge\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_example_model_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_example_model_8cs_source}{Example\+Model.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}{m\_remainingCharge}}\ /\ \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_abe6a81ef2dcd7b0eefa9c60c766e2a7d}{MAX\_CHARGE}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_example_model_8cs_source_l00026}{usea.\+graphics.\+model.\+Example\+Model.\+m\+\_\+remaining\+Charge}}, and \mbox{\hyperlink{_example_model_8cs_source_l00025}{usea.\+graphics.\+model.\+Example\+Model.\+MAX\+\_\+\+CHARGE}}.
+
+\Hypertarget{classusea_1_1graphics_1_1model_1_1_example_model_a2c611d3fbab4ad901fb1a87796e73eea}\label{classusea_1_1graphics_1_1model_1_1_example_model_a2c611d3fbab4ad901fb1a87796e73eea} 
+\index{usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}!IncreaseCharge@{IncreaseCharge}}
+\index{IncreaseCharge@{IncreaseCharge}!usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}}
+\doxysubsubsection{\texorpdfstring{IncreaseCharge()}{IncreaseCharge()}}
+{\footnotesize\ttfamily void usea.\+graphics.\+model.\+Example\+Model.\+Increase\+Charge (\begin{DoxyParamCaption}\item[{float}]{charge\+Increase }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_example_model_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_example_model_8cs_source}{Example\+Model.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}{m\_remainingCharge}}\ =\ Math.Min(\mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_abe6a81ef2dcd7b0eefa9c60c766e2a7d}{MAX\_CHARGE}},\ \mbox{\hyperlink{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}{m\_remainingCharge}}\ +\ chargeIncrease);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_example_model_8cs_source_l00026}{usea.\+graphics.\+model.\+Example\+Model.\+m\+\_\+remaining\+Charge}}, and \mbox{\hyperlink{_example_model_8cs_source_l00025}{usea.\+graphics.\+model.\+Example\+Model.\+MAX\+\_\+\+CHARGE}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb}\label{classusea_1_1graphics_1_1model_1_1_example_model_adb32d877a6360230d5477e62f0458dbb} 
+\index{usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}!m\_remainingCharge@{m\_remainingCharge}}
+\index{m\_remainingCharge@{m\_remainingCharge}!usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}}
+\doxysubsubsection{\texorpdfstring{m\_remainingCharge}{m\_remainingCharge}}
+{\footnotesize\ttfamily float usea.\+graphics.\+model.\+Example\+Model.\+m\+\_\+remaining\+Charge = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_example_model_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_example_model_8cs_source}{Example\+Model.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_example_model_8cs_source_l00015}{usea.\+graphics.\+model.\+Example\+Model.\+Decrease\+Charge()}}, \mbox{\hyperlink{_example_model_8cs_source_l00020}{usea.\+graphics.\+model.\+Example\+Model.\+Get\+Charge\+Rate()}}, and \mbox{\hyperlink{_example_model_8cs_source_l00010}{usea.\+graphics.\+model.\+Example\+Model.\+Increase\+Charge()}}.
+
+\Hypertarget{classusea_1_1graphics_1_1model_1_1_example_model_abe6a81ef2dcd7b0eefa9c60c766e2a7d}\label{classusea_1_1graphics_1_1model_1_1_example_model_abe6a81ef2dcd7b0eefa9c60c766e2a7d} 
+\index{usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}!MAX\_CHARGE@{MAX\_CHARGE}}
+\index{MAX\_CHARGE@{MAX\_CHARGE}!usea.graphics.model.ExampleModel@{usea.graphics.model.ExampleModel}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHARGE}{MAX\_CHARGE}}
+{\footnotesize\ttfamily const float usea.\+graphics.\+model.\+Example\+Model.\+MAX\+\_\+\+CHARGE = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_example_model_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_example_model_8cs_source}{Example\+Model.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_example_model_8cs_source_l00020}{usea.\+graphics.\+model.\+Example\+Model.\+Get\+Charge\+Rate()}}, and \mbox{\hyperlink{_example_model_8cs_source_l00010}{usea.\+graphics.\+model.\+Example\+Model.\+Increase\+Charge()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/armem/\+One\+Drive/\+Dokumente/\+Projects/\+Untitled\+Survival\+Exploration/\+Assets/\+Scripts/\+Graphics/\+Example\+Menu/\mbox{\hyperlink{_example_model_8cs}{Example\+Model.\+cs}}\end{DoxyCompactItemize}

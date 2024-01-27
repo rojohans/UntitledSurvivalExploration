@@ -1,0 +1,55 @@
+\doxysection{Button.\+cs}
+\hypertarget{_button_8cs_source}{}\label{_button_8cs_source}\index{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/Gui/Button.cs@{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/Gui/Button.cs}}
+\mbox{\hyperlink{_button_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00005}\mbox{\hyperlink{namespaceusea_1_1graphics_1_1gui}{00005}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceusea_1_1graphics_1_1gui}{usea.graphics.gui}}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00007}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button}{00007}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button}{Button}}\ :\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui}{InteractableGui}}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00009}00009\ \ \ \ \ \ \ \ \ [System.Serializable]}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00010}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{00010}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{ColourSettings}}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00012}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{00012}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00013}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{00013}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00014}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{00014}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Color\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Colour"{}})]}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00018}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{ColourSettings}}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}};}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00019}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{ColourSettings}}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}};}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00021}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a094328959201c6775b459c8f9e2d5255}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a094328959201c6775b459c8f9e2d5255}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SetSoundListeners();}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SetTooltipListeners();}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c}{SetColourListeners}}();}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00028}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c}{SetColourListeners}}()}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ Image\ image\ =\ transform.Find(\textcolor{stringliteral}{"{}Image"{}}).GetComponent<Image>();}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ boxColour.normal\ =\ image.color;}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{AddOnPointerEnterCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{AddOnPointerExitCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{AddOnPointerDownCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{AddOnPointerUpCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ TMP\_Text\ text\ =\ transform.Find(\textcolor{stringliteral}{"{}Text"{}}).GetComponent<TMP\_Text>();}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ textColour.normal\ =\ text.color;}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{AddOnPointerEnterCallback}}(()\ =>\ \{\ text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{AddOnPointerExitCallback}}(()\ =>\ \{\ text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{AddOnPointerDownCallback}}(()\ =>\ \{\ text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{AddOnPointerUpCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ SetImage}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_button_8cs_source_l00049}00049\ }
+
+\end{DoxyCode}

@@ -1,0 +1,66 @@
+\doxysection{Interactable\+Gui.\+cs}
+\hypertarget{_interactable_gui_8cs_source}{}\label{_interactable_gui_8cs_source}\index{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/Gui/InteractableGui.cs@{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/Gui/InteractableGui.cs}}
+\mbox{\hyperlink{_interactable_gui_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceusea_1_1graphics_1_1gui}{usea.graphics.gui}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00006}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui}{00006}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui}{InteractableGui}}\ :\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled}{EventEnabled}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{comment}{//[Header("{}Sound"{})]}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{comment}{//public\ bool\ defaultSound\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00012}00012\ \textcolor{comment}{\ \ \ \ \ \ \ \ [Header("{}Tooltip"{})]}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00013}00013\ \textcolor{comment}{\ \ \ \ \ \ \ \ public\ string\ tooltipMessage\ =\ "{}"{};}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00014}00014\ \textcolor{comment}{\ \ \ \ \ \ \ \ public\ GameObject\ tooltipObject;}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00015}00015\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00018}00018\ \textcolor{comment}{\ \ \ \ \ \ \ \ protected\ void\ SetSoundListeners()}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00019}00019\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (defaultSound)}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddOnPointerClickCallback(()\ =>\ \{\ HandlerContainer.soundHandler.PlaySound(Settings.GuiSettings.BUTTON\_ON\_POINTER\_CLICK\_SOUND\_CLIP\_NAME);\ \});}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00023}00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddOnPointerEnterCallback(()\ =>\ \{\ HandlerContainer.soundHandler.PlaySound(Settings.GuiSettings.BUTTON\_ON\_POINTER\_ENTER\_SOUND\_CLIP\_NAME);\ \});}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00024}00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00025}00025\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00029}00029\ \textcolor{comment}{\ \ \ \ \ \ \ \ protected\ void\ SetTooltipListeners()}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00030}00030\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00031}00031\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (tooltipMessage\ !=\ "{}"{})}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00033}00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InteractableGui\ interactableGui;}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00034}00034\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (tooltipObject\ ==\ null\ ||\ !tooltipObject.TryGetComponent(out\ interactableGui))}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00035}00035\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00036}00036\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ interactableGui\ =\ this;}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00037}00037\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00038}00038\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ interactableGui.AddOnPointerEnterCallback(()\ =>\ \{\ Tooltip.Show(tooltipMessage);\ \});}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00039}00039\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ interactableGui.AddOnPointerExitCallback(()\ =>\ \{\ Tooltip.Hide();\ \});}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ interactableGui.AddOnPointerClickCallback(()\ =>\ \{\ Tooltip.Hide();\ \});}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00041}00041\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00042}00042\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00043}00043\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00046}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value}{00046}}\ \ \ \ \ \textcolor{keyword}{abstract}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value}{InteractableGuiWithValue}}\ :\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui}{InteractableGui}}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00048}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a2d2d2d3cd1e23ec23e30406fb2571d8d}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a2d2d2d3cd1e23ec23e30406fb2571d8d}{\_onValueChangedCallback}};}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00050}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a3deaed01b96b9d75361e9d68b6e62698}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a3deaed01b96b9d75361e9d68b6e62698}{AddOnValueChangedCallback}}(\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ callback)}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a2d2d2d3cd1e23ec23e30406fb2571d8d}{\_onValueChangedCallback}}\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00055}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a0934c04d876f94a475ddc2732d2deef9}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a0934c04d876f94a475ddc2732d2deef9}{\_OnValueChange}}()}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value_a2d2d2d3cd1e23ec23e30406fb2571d8d}{\_onValueChangedCallback}}?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_gui_8cs_source_l00060}00060\ \}}
+
+\end{DoxyCode}

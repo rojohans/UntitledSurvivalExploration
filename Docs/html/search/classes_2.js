@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['Main',['../classusea_1_1_main.html',1,'usea']]]
+  ['database_0',['Database',['../classusea_1_1data_1_1_database.html',1,'usea::data']]]
 ];

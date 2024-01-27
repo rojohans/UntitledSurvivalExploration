@@ -1,0 +1,127 @@
+\doxysection{Event\+Enabled.\+cs}
+\hypertarget{_event_enabled_8cs_source}{}\label{_event_enabled_8cs_source}\index{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/Gui/EventEnabled.cs@{C:/Users/armem/OneDrive/Dokumente/Projects/UntitledSurvivalExploration/Assets/Scripts/Graphics/Gui/EventEnabled.cs}}
+\mbox{\hyperlink{_event_enabled_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine.UIElements;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceusea_1_1graphics_1_1gui}{usea.graphics.gui}}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00013}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled}{EventEnabled}}\ :\ \mbox{\hyperlink{class_mono_behaviour}{MonoBehaviour}},}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.EventSystems.IPointerEnterHandler,}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.EventSystems.IPointerClickHandler,}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.EventSystems.IPointerExitHandler,}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.EventSystems.IPointerDownHandler,}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.EventSystems.IPointerUpHandler}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PUBLIC}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Should\ this\ be\ defined\ in\ some\ utility\ place?\ There\ will\ be\ many\ classes\ which\ use\ "{}empty"{}\ callbacks.}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00022}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ delegate\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}();\ \textcolor{comment}{//\ Da\ fuc\ isa\ dis?}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00024}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a049bc9590441dfccfed800455ec6d1fd}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a049bc9590441dfccfed800455ec6d1fd}{EventEnabled}}()}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00027}00027\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_callbacks\ =\ new\ Dictionary<EventTypeE,\ Callback>()\ \{\{EventTypeE.ON\_POINTER\_CLICK,\ null\},}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00028}00028\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{EventTypeE.ON\_POINTER\_ENTER,\ null\},}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00029}00029\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{EventTypeE.ON\_POINTER\_EXIT,\ null\},}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00030}00030\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{EventTypeE.ON\_POINTER\_DOWN,\ null\},}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00031}00031\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{EventTypeE.ON\_POINTER\_UP,\ null\}\};}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00035}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a7e62b4443fba7c8b5970c9023d3fa663}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a7e62b4443fba7c8b5970c9023d3fa663}{AddOnPointerClickCallback}}(\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ callback)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ m\_callbacks.onPointerClick\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_CLICK]\ =\ callback;}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00041}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{AddOnPointerEnterCallback}}(\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ callback)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ m\_callbacks.onPointerEnter\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_ENTER]\ =\ callback;}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00047}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{AddOnPointerExitCallback}}(\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ callback)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ m\_callbacks.onPointerExit\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_EXIT]\ =\ callback;}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00053}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{AddOnPointerDownCallback}}(\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ callback)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ m\_callbacks.onPointerDown\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_DOWN]\ =\ callback;}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00059}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{AddOnPointerUpCallback}}(\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ callback)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ m\_callbacks.onPointerUp\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_UP]\ =\ callback;}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00065}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a09452ee3db15cdceb76884b5a58e6343}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a09452ee3db15cdceb76884b5a58e6343}{OnPointerClick}}(UnityEngine.EventSystems.PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{m\_callbacks}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a73887096513661bd477162c487cb71be}{OnPointerClick}}();}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_CLICK]?.Invoke();}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00071}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a763e6d5f23b84e58b16ecb3edd69a33c}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a763e6d5f23b84e58b16ecb3edd69a33c}{OnPointerEnter}}(UnityEngine.EventSystems.PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{m\_callbacks}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a4b2df032d1573bdcf262b72d1f01ae27}{OnPointerEnter}}();}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_ENTER]?.Invoke();}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00077}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad01b9ffc3165d4db68c82016b27ec721}{00077}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad01b9ffc3165d4db68c82016b27ec721}{OnPointerExit}}(UnityEngine.EventSystems.PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{m\_callbacks}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a8de22e63417b95e1f420e188d7925e70}{OnPointerExit}}();}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_EXIT]?.Invoke();}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00083}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a39881067ada1677c9d5e879e2fc2f572}{00083}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a39881067ada1677c9d5e879e2fc2f572}{OnPointerDown}}(UnityEngine.EventSystems.PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{m\_callbacks}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ad6bf33708b8a4a99122455179ded51c4}{OnPointerDown}}();}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_DOWN]?.Invoke();}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00089}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1761934e0ae542c4437a31cb907ef881}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1761934e0ae542c4437a31cb907ef881}{OnPointerUp}}(UnityEngine.EventSystems.PointerEventData\ eventData)}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{m\_callbacks}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_afc35a473a2522a3218b8954117505245}{OnPointerUp}}();}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_callbacks[EventTypeE.ON\_POINTER\_UP]?.Invoke();}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRIVATE}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00097}00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ private\ enum\ EventTypeE}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00098}00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ON\_POINTER\_CLICK,}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ON\_POINTER\_ENTER,}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00101}00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ON\_POINTER\_EXIT,}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00102}00102\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ON\_POINTER\_DOWN,}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00103}00103\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ON\_POINTER\_UP}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00104}00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00105}00105\ \textcolor{comment}{\ \ \ \ \ \ \ \ private\ Dictionary<EventTypeE,\ Callback>\ m\_callbacks;}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00106}00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00108}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks}{00108}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks}{Callbacks}}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00110}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ac79998a0161bc76bb8b328ae9864f346}{00110}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ac79998a0161bc76bb8b328ae9864f346}{onPointerClick}};}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00111}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ae9299ba61bb6fce14687204b64b381f9}{00111}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ae9299ba61bb6fce14687204b64b381f9}{onPointerEnter}};}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00112}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a28b0957e51e08ac36e105128d6ab28b6}{00112}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a28b0957e51e08ac36e105128d6ab28b6}{onPointerExit}};}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00113}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a4550311b90e14a311f2578a026935ce9}{00113}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a4550311b90e14a311f2578a026935ce9}{onPointerDown}};}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00114}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a417dffc63317b5ca48e68d6e0883b171}{00114}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a417dffc63317b5ca48e68d6e0883b171}{onPointerUp}};}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00115}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a73887096513661bd477162c487cb71be}{00115}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a73887096513661bd477162c487cb71be}{OnPointerClick}}()\ \{\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ac79998a0161bc76bb8b328ae9864f346}{onPointerClick}}?.Invoke();\ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00116}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a4b2df032d1573bdcf262b72d1f01ae27}{00116}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a4b2df032d1573bdcf262b72d1f01ae27}{OnPointerEnter}}()\ \{\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ae9299ba61bb6fce14687204b64b381f9}{onPointerEnter}}?.Invoke();\ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00117}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a8de22e63417b95e1f420e188d7925e70}{00117}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a8de22e63417b95e1f420e188d7925e70}{OnPointerExit}}()\ \{\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a28b0957e51e08ac36e105128d6ab28b6}{onPointerExit}}?.Invoke();\ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00118}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ad6bf33708b8a4a99122455179ded51c4}{00118}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_ad6bf33708b8a4a99122455179ded51c4}{OnPointerDown}}()\ \{\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a4550311b90e14a311f2578a026935ce9}{onPointerDown}}?.Invoke();\ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00119}\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_afc35a473a2522a3218b8954117505245}{00119}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_afc35a473a2522a3218b8954117505245}{OnPointerUp}}()\ \{\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks_a417dffc63317b5ca48e68d6e0883b171}{onPointerUp}}?.Invoke();\ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00121}\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{00121}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks}{Callbacks}}\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad692886bd29dcbcf2dfe26f7285b7087}{m\_callbacks}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks}{Callbacks}}();}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_enabled_8cs_source_l00124}00124\ \}}
+
+\end{DoxyCode}

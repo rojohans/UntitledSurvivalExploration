@@ -1,0 +1,27 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_unity_engine_1_1_event_systems_1_1_i_pointer_click_handler.html" title=" " alt="" coords="5,5,189,48"/>
+<area shape="rect" id="Node000001" href="$classusea_1_1graphics_1_1gui_1_1_event_enabled.html" title="Base class for gui objects that should use Unity events." alt="" coords="240,180,447,207"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="181,53,190,58,233,87,274,121,331,177,327,181,270,125,230,92,187,62,179,57"/>
+<area shape="rect" id="Node000002" href="$classusea_1_1graphics_1_1gui_1_1_interactable_gui.html" title=" " alt="" coords="498,180,712,207"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="462,191,497,191,497,196,462,196"/>
+<area shape="rect" id="Node000003" href="$classusea_1_1graphics_1_1gui_1_1_button.html" title=" " alt="" coords="775,151,940,177"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="727,176,774,171,775,176,728,182"/>
+<area shape="rect" id="Node000004" href="$classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value.html" title=" " alt="" coords="760,201,955,244"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="728,205,760,209,760,214,728,210"/>
+<area shape="rect" id="Node000005" href="$class_unity_engine_1_1_event_systems_1_1_i_pointer_down_handler.html" title=" " alt="" coords="5,72,189,115"/>
+<area shape="poly" id="edge5_Node000005_Node000001" title=" " alt="" coords="174,118,190,124,313,177,311,182,188,129,172,123"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,139,189,181"/>
+<area shape="poly" id="edge6_Node000006_Node000001" title=" " alt="" coords="204,172,240,177,239,182,204,177"/>
+<area shape="rect" id="Node000007" href="$class_unity_engine_1_1_event_systems_1_1_i_pointer_exit_handler.html" title=" " alt="" coords="5,205,189,248"/>
+<area shape="poly" id="edge7_Node000007_Node000001" title=" " alt="" coords="204,210,239,205,240,210,204,215"/>
+<area shape="rect" id="Node000008" href="$class_unity_engine_1_1_event_systems_1_1_i_pointer_up_handler.html" title=" " alt="" coords="5,272,189,315"/>
+<area shape="poly" id="edge8_Node000008_Node000001" title=" " alt="" coords="172,264,188,258,311,205,313,210,190,262,174,269"/>
+<area shape="rect" id="Node000009" href="$class_mono_behaviour.html" title=" " alt="" coords="42,339,152,365"/>
+<area shape="poly" id="edge10_Node000009_Node000001" title=" " alt="" coords="165,336,187,325,203,307,211,290,219,270,235,250,270,224,306,205,309,210,273,228,239,254,224,273,216,292,208,310,190,329,168,341"/>
+<area shape="rect" id="Node000010" href="$classusea_1_1graphics_1_1controller_1_1_controller.html" title=" " alt="" coords="253,264,434,307"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="163,331,261,305,262,310,165,337"/>
+<area shape="rect" id="Node000011" href="$classusea_1_1graphics_1_1model_1_1_example_model.html" title=" " alt="" coords="245,331,442,373"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="167,349,245,349,245,355,167,355"/>
+<area shape="rect" id="Node000012" href="$classusea_1_1graphics_1_1view_1_1_example_view.html" title=" " alt="" coords="237,397,450,424"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="168,366,237,383,285,394,283,399,236,388,166,371"/>
+</map>

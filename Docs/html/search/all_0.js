@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['database_0',['Database',['../classusea_1_1data_1_1_database.html',1,'usea::data']]],
-  ['dataexample_2ecs_1',['DataExample.cs',['../_data_example_8cs.html',1,'']]]
+  ['_5fonvaluechange_0',['_OnValueChange',['../classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value.html#a0934c04d876f94a475ddc2732d2deef9',1,'usea::graphics::gui::InteractableGuiWithValue']]],
+  ['_5fonvaluechangedcallback_1',['_onValueChangedCallback',['../classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value.html#a2d2d2d3cd1e23ec23e30406fb2571d8d',1,'usea::graphics::gui::InteractableGuiWithValue']]]
 ];

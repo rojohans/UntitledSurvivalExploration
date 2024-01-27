@@ -59,28 +59,32 @@ Meditator --> Events
 
 title Allowed dependencies
 
-package Graphics <<node>>{
-    package Controller <<rectangle>>{
+!$GRAPHICS_COLOUR = "#D8996C"
+!$FUNCTIONALITY_COLOUR = "#6CD8A0"
+
+
+package Graphics <<node>> $GRAPHICS_COLOUR{
+    package "<b>Controller" as Controller <<rectangle>>{
     }
-    package View <<rectangle>>{
+    package "<b>View" as View <<rectangle>>{
     }
-    package Model <<Database>>{
+    package "<b>Model" as Model <<Database>>{
     }
 }
 
-package User <<Cloud>>{
+package "<b>User" as User <<Cloud>>{
 }
 
-package Functionality <<node>>{
-    package Service <<rectangle>>{
+package Functionality <<node>> $FUNCTIONALITY_COLOUR{
+    package "<b>Service" as Service <<rectangle>>{
     }
-    package SubService <<rectangle>>{
+    package "<b>SubService" as SubService <<rectangle>>{
     }
-    package Engine <<rectangle>>{
+    package "<b>Engine" as Engine <<rectangle>>{
     }
 }
 
-package Data <<Database>>{
+package "<b>Data" as Data <<Database>>{
 }
 
 '--------------------------------
@@ -93,9 +97,8 @@ Model "1" <--l-* "1" Controller : Update
 Model ...> Controller : answer
 
 View ...> Controller : Event Callback
-View <..l. User : Input
-View ..l.> User : Graphics & Audio
-
+View <..r. User : Input
+View ..r.> User : Graphics & Audio
 
 Data <--l- Service : Read/Write
 Data <--l- SubService : Read/Write
