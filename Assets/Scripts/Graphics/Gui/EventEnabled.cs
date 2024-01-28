@@ -35,61 +35,51 @@ namespace usea.graphics.gui
         public void AddOnPointerClickCallback(Callback callback)
         {
             m_callbacks.onPointerClick += callback;
-            //m_callbacks[EventTypeE.ON_POINTER_CLICK] = callback;
         }
 
         public void AddOnPointerEnterCallback(Callback callback)
         {
             m_callbacks.onPointerEnter += callback;
-            //m_callbacks[EventTypeE.ON_POINTER_ENTER] = callback;
         }
 
         public void AddOnPointerExitCallback(Callback callback)
         {
             m_callbacks.onPointerExit += callback;
-            //m_callbacks[EventTypeE.ON_POINTER_EXIT] = callback;
         }
 
         public void AddOnPointerDownCallback(Callback callback)
         {
             m_callbacks.onPointerDown += callback;
-            //m_callbacks[EventTypeE.ON_POINTER_DOWN] = callback;
         }
 
         public void AddOnPointerUpCallback(Callback callback)
         {
             m_callbacks.onPointerUp += callback;
-            //m_callbacks[EventTypeE.ON_POINTER_UP] = callback;
         }
 
         public void OnPointerClick(UnityEngine.EventSystems.PointerEventData eventData)
         {
             m_callbacks.OnPointerClick();
-            //m_callbacks[EventTypeE.ON_POINTER_CLICK]?.Invoke();
         }
 
         public void OnPointerEnter(UnityEngine.EventSystems.PointerEventData eventData)
         {
             m_callbacks.OnPointerEnter();
-            //m_callbacks[EventTypeE.ON_POINTER_ENTER]?.Invoke();
         }
 
         public void OnPointerExit(UnityEngine.EventSystems.PointerEventData eventData)
         {
             m_callbacks.OnPointerExit();
-            //m_callbacks[EventTypeE.ON_POINTER_EXIT]?.Invoke();
         }
 
         public void OnPointerDown(UnityEngine.EventSystems.PointerEventData eventData)
         {
             m_callbacks.OnPointerDown();
-            //m_callbacks[EventTypeE.ON_POINTER_DOWN]?.Invoke();
         }
 
         public void OnPointerUp(UnityEngine.EventSystems.PointerEventData eventData)
         {
             m_callbacks.OnPointerUp();
-            //m_callbacks[EventTypeE.ON_POINTER_UP]?.Invoke();
         }
 
         // PRIVATE

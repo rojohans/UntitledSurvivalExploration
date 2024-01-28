@@ -3,31 +3,31 @@ using UnityEngine;
 
 namespace usea.graphics.controller
 {
-    public abstract partial class Controller<modelT, viewT> : MonoBehaviour
+    public abstract partial class Controller : MonoBehaviour
     {
-        // ====== PUBLIC ======
+        // ###### PUBLIC ######
         public partial void OnEnable();
         public partial void OnDisable();
 
-        // ====== PROTECTED ======
+        // ###### PROTECTED ######
         protected abstract void Initialize();
         protected abstract void Show();
         protected abstract void Hide();
 
-        // ====== PRIVATE ======
+        // ###### PRIVATE ######
         private bool m_isInitialized;
-        public modelT m_model;
-        public viewT m_view;
+        [SerializeField] private GuiObjectTypeE m_name;
     }
 
-    public abstract partial class Controller<modelT, viewT>
+    public abstract partial class Controller
     {
-        // ====== PUBLIC ======
         public partial void OnEnable()
         {
             if (!m_isInitialized)
             {
+                m_isInitialized = true;
                 Initialize();
+                GuiManager.RegisterObject(m_name, this);
             }
 
             Show();

@@ -59,16 +59,28 @@ Meditator --> Events
 
 title Allowed dependencies
 
-!$GRAPHICS_COLOUR = "#D8996C"
-!$FUNCTIONALITY_COLOUR = "#6CD8A0"
+'!$GRAPHICS_COLOUR = "#D86C6C"
+'!$OBJECT_COLOUR = "#D8C36C"
+'!$FUNCTIONALITY_COLOUR = "#6CAFD8"
 
+!$GRAPHICS_COLOUR = "#6CD8A8"
+!$OBJECT_COLOUR = "#8DD86C"
+!$FUNCTIONALITY_COLOUR = "#D8946C"
 
 package Graphics <<node>> $GRAPHICS_COLOUR{
-    package "<b>Controller" as Controller <<rectangle>>{
+
+    package "  <<Singleton>>\n<b>Gui Manager" as GuiManager <<rectangle>>{
     }
-    package "<b>View" as View <<rectangle>>{
+    package "<b>Gui Register" as GuiRegister <<Database>>{
     }
-    package "<b>Model" as Model <<Database>>{
+
+    package Object <<frame>> $OBJECT_COLOUR{
+            package "<b>Controller" as Controller <<rectangle>>{
+            }
+            package "<b>View" as View <<rectangle>>{
+            }
+            package "<b>Model" as Model <<Database>>{
+        }
     }
 }
 
@@ -80,7 +92,7 @@ package Functionality <<node>> $FUNCTIONALITY_COLOUR{
     }
     package "<b>SubService" as SubService <<rectangle>>{
     }
-    package "<b>Engine" as Engine <<rectangle>>{
+    package "<<Singleton>>\n   <b>Engine" as Engine <<rectangle>>{
     }
 }
 
@@ -89,9 +101,14 @@ package "<b>Data" as Data <<Database>>{
 
 '--------------------------------
 
+GuiRegister "1" o.d.> "*" Controller : Stores
+
+GuiManager -l-> GuiRegister
+
 Controller "1" *--r-> "1" View : Update/Action
 Controller "1" ---> "*" Service : Inject into\nEngine
 Controller "*" ---> "1" Engine : Schedule\n&\nSetTimer
+Controller "*" -u-> "1" GuiManager : Access other\ncontrollers
 
 Model "1" <--l-* "1" Controller : Update
 Model ...> Controller : answer
@@ -109,6 +126,10 @@ Service ...> Engine : Answer
 
 SubService ...> Service : Answer
 Service "1" *---> "*" SubService : Execute
+
+
+
+
 
 
 @enduml
