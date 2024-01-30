@@ -10,11 +10,7 @@ namespace usea.graphics
     public enum GuiObjectTypeE
     {
         NONE,
-        MAIN_MENU,
-        END_GAME_SCREEN,
-        C,
-        D,
-        E
+        TOOLTIP
     };
 
     /// <summary>

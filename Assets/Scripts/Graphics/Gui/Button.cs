@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using usea.graphics.controller;
 
 namespace usea.graphics.gui
 {
-    public class Button : InteractableGui
+    public class Button : EventEnabled
     {
         [System.Serializable]
         public struct ColourSettings
@@ -22,7 +23,23 @@ namespace usea.graphics.gui
         {
             //SetSoundListeners();
             //SetTooltipListeners();
-            SetColourListeners();
+            //SetColourListeners();
+        }
+
+        public void SetTooltip(string message)
+        {
+            AddOnPointerEnterCallback(() =>
+            {
+                TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
+                print(message);
+                a.Activate(message);
+            });
+
+            AddOnPointerExitCallback(() =>
+            {
+                TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
+                a.Deactivate();
+            });
         }
 
         private void SetColourListeners()

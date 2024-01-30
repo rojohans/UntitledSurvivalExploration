@@ -11,8 +11,8 @@ namespace usea.graphics.controller
 
         // ###### PROTECTED ######
         protected abstract void Initialize();
-        protected abstract void Show();
-        protected abstract void Hide();
+        protected abstract void Show(); // Question: Is this really needed?
+        protected abstract void Hide(); // Question: Is this really needed?
 
         // ###### PRIVATE ######
         private bool m_isInitialized;
@@ -27,7 +27,7 @@ namespace usea.graphics.controller
             {
                 m_isInitialized = true;
                 Initialize();
-                GuiManager.RegisterObject(m_name, this);
+                GuiManager.Get().RegisterObject(m_name, this);
             }
 
             Show();

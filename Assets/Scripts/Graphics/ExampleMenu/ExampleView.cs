@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using usea.graphics.gui;
 
 namespace usea.graphics.view
 {
@@ -12,8 +13,13 @@ namespace usea.graphics.view
         // ###### PUBLIC ######
         public void AddButtonCallback(Callback OnButtonPress)
         {
-            m_button.onClick.AddListener(() => { OnButtonPress(); });
-            //m_slider.on
+            m_button.AddOnPointerClickCallback(() => { OnButtonPress(); });
+            //m_button.onClick.AddListener(() => { OnButtonPress(); });
+        }
+
+        public void AddButtonTooltip(string message)
+        {
+            m_button.SetTooltip(message);
         }
 
         public void UpdateBar(float newValue)
@@ -23,6 +29,7 @@ namespace usea.graphics.view
 
         // ###### PRIVATE ######
         [SerializeField] private Slider m_slider;
-        [SerializeField] private Button m_button;
+        //[SerializeField] private Button m_button;
+        [SerializeField] private gui.Button m_button;
     }
 }
