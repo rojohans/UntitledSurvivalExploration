@@ -1,9 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
-using System.Collections.Generic;
-using System;
-using System.Runtime.CompilerServices;
-using UnityEngine.UIElements;
 
 namespace usea.graphics.gui
 {
@@ -21,16 +16,18 @@ namespace usea.graphics.gui
         // TODO: Should this be defined in some utility place? There will be many classes which use "empty" callbacks.
         public delegate void Callback(); // Da fuc isa dis?
 
+        /*
         public EventEnabled()
         {
-            /*
+            
             m_callbacks = new Dictionary<EventTypeE, Callback>() {{EventTypeE.ON_POINTER_CLICK, null},
                                                                   {EventTypeE.ON_POINTER_ENTER, null},
                                                                   {EventTypeE.ON_POINTER_EXIT, null},
                                                                   {EventTypeE.ON_POINTER_DOWN, null},
                                                                   {EventTypeE.ON_POINTER_UP, null}};
-            */
+            
         }
+        */
 
         public void AddOnPointerClickCallback(Callback callback)
         {
@@ -109,6 +106,5 @@ namespace usea.graphics.gui
             public void OnPointerUp() { onPointerUp?.Invoke(); }
         }
         private Callbacks m_callbacks = new Callbacks();
-
     }
 }

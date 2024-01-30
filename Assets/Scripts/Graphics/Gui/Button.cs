@@ -5,10 +5,22 @@ using usea.graphics.controller;
 
 namespace usea.graphics.gui
 {
-    public class Button : EventEnabled
+    /// <summary>
+    /// A custom implementation of a button. Has more flexible callbacks than Unity's default button implementation.
+    /// 
+    /// @TODO: SetSoundListener functionality
+    /// @TODO: SetImage functionality
+    /// </summary>
+    public partial class Button : EventEnabled
     {
+        // ###### PUBLIC ######
+        public partial void Awake();
+        public partial void SetTooltip(string message);
+
+        // ###### PRIVATE ######
+        private partial void SetColourListeners();
         [System.Serializable]
-        public struct ColourSettings
+        private struct ColourSettings
         {
             public Color normal;
             public Color onPointerEnter;
@@ -16,17 +28,26 @@ namespace usea.graphics.gui
         };
 
         [Header("Colour")]
-        public ColourSettings boxColour;
-        public ColourSettings textColour;
+        [SerializeField] private ColourSettings m_boxColour;
+        [SerializeField] private ColourSettings m_textColour;
 
-        public void Awake()
+        [Header("Components")]
+        [SerializeField] private Image m_image;
+        [SerializeField] private TMP_Text m_text;
+        private bool m_isCursorOnThisObject;
+    }
+
+    public partial class Button : EventEnabled
+    {
+        public partial void Awake()
         {
+            m_isCursorOnThisObject = false;
             //SetSoundListeners();
             //SetTooltipListeners();
-            //SetColourListeners();
+            SetColourListeners();
         }
 
-        public void SetTooltip(string message)
+        public partial void SetTooltip(string message)
         {
             AddOnPointerEnterCallback(() =>
             {
@@ -42,24 +63,31 @@ namespace usea.graphics.gui
             });
         }
 
-        private void SetColourListeners()
+        private partial void SetColourListeners()
         {
-            Image image = transform.Find("Image").GetComponent<Image>();
-            boxColour.normal = image.color;
-            AddOnPointerEnterCallback(() => { image.color = boxColour.onPointerEnter; });
-            AddOnPointerExitCallback(() => { image.color = boxColour.normal; });
-            AddOnPointerDownCallback(() => { image.color = boxColour.onPointerClick; });
-            AddOnPointerUpCallback(() => { image.color = boxColour.normal; });
-
-            TMP_Text text = transform.Find("Text").GetComponent<TMP_Text>();
-            textColour.normal = text.color;
-            AddOnPointerEnterCallback(() => { text.color = textColour.onPointerEnter; });
-            AddOnPointerExitCallback(() => { text.color = textColour.normal; });
-            AddOnPointerDownCallback(() => { text.color = textColour.onPointerClick; });
-            AddOnPointerUpCallback(() => { image.color = boxColour.normal; });
+            AddOnPointerEnterCallback(() =>
+            {
+                m_isCursorOnThisObject = true;
+                m_image.color = m_boxColour.onPointerEnter;
+                m_text.color = m_textColour.onPointerEnter;
+            });
+            AddOnPointerExitCallback(() =>
+            {
+                m_isCursorOnThisObject = false;
+                m_image.color = m_boxColour.normal;
+                m_text.color = m_textColour.normal;
+            });
+            AddOnPointerDownCallback(() =>
+            {
+                m_image.color = m_boxColour.onPointerClick;
+                m_text.color = m_textColour.onPointerClick;
+            });
+            AddOnPointerUpCallback(() =>
+            {
+                m_image.color = m_isCursorOnThisObject ? m_boxColour.onPointerEnter : m_boxColour.normal;
+                m_text.color = m_isCursorOnThisObject ? m_textColour.onPointerEnter : m_textColour.normal;
+            });
         }
-
-        // TODO: SetImage
     }
 }
 

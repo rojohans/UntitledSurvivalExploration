@@ -36,7 +36,7 @@ namespace usea.graphics.controller
         {
             print("Initialize");
             m_view.AddButtonCallback(OnButtonPress);
-            m_view.AddButtonTooltip("Testing something \ncool here.");
+            //m_view.AddButtonTooltip("Testing something cool here.");
             m_view.UpdateBar(m_model.GetChargeRate());
         }
 

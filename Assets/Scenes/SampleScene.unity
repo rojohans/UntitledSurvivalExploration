@@ -264,8 +264,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290445274
+  m_fontColor: {r: 0.8533448, g: 1, b: 0.7311321, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -662,14 +662,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d58e0ab72155b54c8278505ff889c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxColour:
-    normal: {r: 0, g: 0, b: 0, a: 0}
-    onPointerEnter: {r: 0, g: 0, b: 0, a: 0}
-    onPointerClick: {r: 0, g: 0, b: 0, a: 0}
-  textColour:
-    normal: {r: 1, g: 1, b: 1, a: 0}
-    onPointerEnter: {r: 1, g: 0.98155427, b: 0.4481132, a: 0}
-    onPointerClick: {r: 1, g: 0.3726415, b: 0.3726415, a: 0}
+  m_boxColour:
+    normal: {r: 0.14901961, g: 0.34117648, b: 0.19607845, a: 1}
+    onPointerEnter: {r: 0.13332146, g: 0.26415092, b: 0.16239469, a: 1}
+    onPointerClick: {r: 0.08784266, g: 0.13207549, b: 0.09767218, a: 1}
+  m_textColour:
+    normal: {r: 0.8533448, g: 1, b: 0.7311321, a: 1}
+    onPointerEnter: {r: 0.95159817, g: 1, b: 0.41037738, a: 1}
+    onPointerClick: {r: 1, g: 0.77155715, b: 0.16509432, a: 1}
+  m_image: {fileID: 1557531069}
+  m_text: {fileID: 106036960}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+  m_Color: {r: 0.14898539, g: 0.33962262, b: 0.19500126, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
