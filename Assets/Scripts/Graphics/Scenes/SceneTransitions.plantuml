@@ -1,0 +1,35 @@
+@startuml Scene_Transitions
+
+title Scene transitions
+
+state MainMenu
+state NewGameMenu
+state About
+state GameSession
+state Settings
+
+hide empty description
+
+'  -> horizontal
+' --> vertical
+
+[*] --> MainMenu : Start
+
+MainMenu -l-> About
+About -r-> MainMenu
+
+MainMenu -r-> Settings
+MainMenu --> NewGameMenu
+
+NewGameMenu -> GameSession
+NewGameMenu --> MainMenu
+
+GameSession --> Settings
+GameSession -> MainMenu
+
+Settings -> MainMenu
+Settings -> GameSession
+
+
+
+@enduml
