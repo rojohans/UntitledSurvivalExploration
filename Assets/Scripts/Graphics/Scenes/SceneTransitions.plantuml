@@ -30,6 +30,4 @@ GameSession -> MainMenu
 Settings -> MainMenu
 Settings -> GameSession
 
-
-
 @enduml

@@ -36,7 +36,10 @@ namespace usea.graphics
 
         public partial void RegisterObject(GuiObjectTypeE key, controller.Controller value)
         {
-            m_guiRegistry.AddGuiObject(key, value);
+            if (key != GuiObjectTypeE.NONE)
+            {
+                m_guiRegistry.AddGuiObject(key, value);
+            }
         }
 
         public partial controller.Controller GetObject(GuiObjectTypeE key)
