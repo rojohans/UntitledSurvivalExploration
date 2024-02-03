@@ -1,0 +1,23 @@
+@startuml
+
+hide empty description
+
+
+state On
+state Off
+state OnHighlight
+state OffHighlight
+
+
+OnHighlight --> OffHighlight : Click
+OnHighlight -l-> On : Exit
+
+OffHighlight --> OnHighlight : Click
+OffHighlight -l-> Off : Exit
+
+On -> OnHighlight : Enter
+
+Off -> OffHighlight : Enter
+
+
+@enduml

@@ -29,15 +29,18 @@ namespace usea.graphics.controller
         public partial void Update()
         {
             m_model.DecreaseCharge(Time.deltaTime);
-            m_view.UpdateBar(m_model.GetChargeRate());
+            m_view.m_slider.value = m_model.GetChargeRate();
         }
 
         protected override partial void Initialize()
         {
             print("Initialize");
-            m_view.AddButtonCallback(OnButtonPress);
-            //m_view.AddButtonTooltip("Testing something cool here.");
-            m_view.UpdateBar(m_model.GetChargeRate());
+            m_model.SetChargeIncrement(1);
+            m_view.m_button.AddOnPointerClickCallback(OnButtonPress);
+            m_view.m_toggle.SetOnCallback(() => { m_model.SetChargeIncrement(3); });
+            m_view.m_toggle.SetOffCallback(() => { m_model.SetChargeIncrement(1); });
+            //m_view.m_toggle.SetTooltip("On: Increment=3\nOff: Increment=1");
+            m_view.m_slider.value = m_model.GetChargeRate();
         }
 
         protected override partial void Show()
@@ -53,8 +56,8 @@ namespace usea.graphics.controller
         private partial void OnButtonPress()
         {
             print("OnButtonPress");
-            m_model.IncreaseCharge(1);
-            m_view.UpdateBar(m_model.GetChargeRate());
+            m_model.IncreaseCharge();
+            m_view.m_slider.value = m_model.GetChargeRate();
         }
     }
 }

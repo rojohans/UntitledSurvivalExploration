@@ -52,7 +52,6 @@ namespace usea.graphics.gui
             AddOnPointerEnterCallback(() =>
             {
                 TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
-                print(message);
                 a.Activate(message);
             });
 

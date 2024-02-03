@@ -8,9 +8,14 @@ namespace usea.graphics.model
     public class ExampleModel : MonoBehaviour
     {
         // ###### PUBLIC ######
-        public void IncreaseCharge(float chargeIncrease)
+        public void IncreaseCharge()
         {
-            m_remainingCharge = Math.Min(MAX_CHARGE, m_remainingCharge + chargeIncrease);
+            m_remainingCharge = Math.Min(MAX_CHARGE, m_remainingCharge + m_chargeIncrement);
+        }
+
+        public void SetChargeIncrement(float newChargeIncrement)
+        {
+            m_chargeIncrement = newChargeIncrement;
         }
 
         public void DecreaseCharge(float chargeDecrease)
@@ -26,5 +31,6 @@ namespace usea.graphics.model
         // ###### PRIVATE ######
         private const float MAX_CHARGE = 10;
         private float m_remainingCharge = 5;
+        private float m_chargeIncrement = 1;
     }
 }
