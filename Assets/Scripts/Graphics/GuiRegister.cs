@@ -38,7 +38,7 @@ namespace usea.graphics
             {
                 MonoBehaviour.print("Entry already exist for key=" + key + ", will replace existing gui object.");
             }
-            MonoBehaviour.print("Adding gui object of type=" + key);
+            // MonoBehaviour.print("Adding gui object of type=" + key);
             m_guiObjects.Add(key, value);
         }
 

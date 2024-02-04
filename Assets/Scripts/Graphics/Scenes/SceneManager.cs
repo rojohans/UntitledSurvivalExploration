@@ -14,6 +14,7 @@ namespace usea.graphics.scene
         protected override void Hide() { }
 
         // ###### PRIVATE ######
+        private partial void SwitchScene(MonoBehaviour newScene);
         private partial void OpenAbout();
         private partial void CloseAbout();
         private partial void OpenSettings();
@@ -22,12 +23,13 @@ namespace usea.graphics.scene
         private partial void CloseNewGameMenu();
         private partial void StartNewGameSession();
         private partial void CloseGameSession();
+        private partial void CloseProgram();
 
-        // [SerializeField] private MainMenuScene m_mainMenu;
-        // [SerializeField] private AboutScene m_about;
-        // [SerializeField] private SettingsScene m_settings;
-        // [SerializeField] private NewGameMenuScene m_newGameMenu;
-        // [SerializeField] private GameSessionMenu m_gameSession;
+        [SerializeField] private MainMenuScene m_mainMenuScene;
+        [SerializeField] private AboutScene m_aboutScene;
+        [SerializeField] private SettingsScene m_settingsScene;
+        [SerializeField] private NewGameMenuScene m_newGameMenuScene;
+        [SerializeField] private GameSessionScene m_gameSessionScene;
 
         private MonoBehaviour m_activeScene;
         private MonoBehaviour m_previousScene;
@@ -37,51 +39,73 @@ namespace usea.graphics.scene
     {
         protected override partial void Initialize()
         {
-            // m_mainMenu.gameObject.SetActive(true);
-            // m_about.gameObject.SetActive(false);
-            // m_settings.gameObject.SetActive(false);
-            // m_newGameMenu.gameObject.SetActive(false);
-            // m_gameSession.gameObject.SetActive(false);
+            m_mainMenuScene.SetCallbacks(OpenAbout, OpenSettings, OpenNewGameMenu, CloseProgram);
+            m_aboutScene.SetCallbacks(CloseAbout);
+            m_settingsScene.SetCallbacks(CloseSettings);
+            m_newGameMenuScene.SetCallbacks(CloseNewGameMenu, StartNewGameSession, OpenSettings);
+            m_gameSessionScene.SetCallbacks(OpenSettings, CloseGameSession, CloseProgram);
 
-            // m_mainMenu.SetCallbacks(OpenAbout, OpenSettings, OpenNewGameMenu);
-            // m_about.SetCallbacks(CloseAbout);
-            // m_settings.SetCallbacks(CloseSettings);
-            // m_newGameMenu.SetCallbacks(CloseNewGameMenu, StartNewGameSession);
-            // m_gameSession.SetCallbacks(OpenSettings, CloseGameSession);
+            m_mainMenuScene.gameObject.SetActive(true);
+            m_aboutScene.gameObject.SetActive(false);
+            m_settingsScene.gameObject.SetActive(false);
+            m_newGameMenuScene.gameObject.SetActive(false);
+            m_gameSessionScene.gameObject.SetActive(false);
+
+            m_activeScene = null;
+            SwitchScene(m_mainMenuScene);
+        }
+
+        private partial void SwitchScene(MonoBehaviour newScene)
+        {
+            m_activeScene?.gameObject.SetActive(false);
+            m_previousScene = m_activeScene;
+            m_activeScene = newScene;
+            m_activeScene.gameObject.SetActive(true);
         }
 
         private partial void OpenAbout()
         {
-            // m_previousScene = m_activeScene;
-            // m_activeScene = 
+            SwitchScene(m_aboutScene);
         }
 
         private partial void CloseAbout()
         {
+            SwitchScene(m_mainMenuScene);
         }
 
         private partial void OpenSettings()
         {
+            SwitchScene(m_settingsScene);
         }
 
         private partial void CloseSettings()
         {
+            SwitchScene(m_previousScene);
         }
 
         private partial void OpenNewGameMenu()
         {
+            SwitchScene(m_newGameMenuScene);
         }
 
         private partial void CloseNewGameMenu()
         {
+            SwitchScene(m_mainMenuScene);
         }
 
         private partial void StartNewGameSession()
         {
+            SwitchScene(m_gameSessionScene);
         }
 
         private partial void CloseGameSession()
         {
+            SwitchScene(m_mainMenuScene);
+        }
+
+        private partial void CloseProgram()
+        {
+            Application.Quit();
         }
     }
 }

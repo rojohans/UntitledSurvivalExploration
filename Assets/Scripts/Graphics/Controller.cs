@@ -10,6 +10,9 @@ namespace usea.graphics.controller
         public partial void OnDisable();
 
         // ###### PROTECTED ######
+        /// <summary>
+        /// Used for settings callbacks for all owned gui objects.
+        /// </summary>
         protected abstract void Initialize();
         protected abstract void Show(); // Question: Is this really needed?
         protected abstract void Hide(); // Question: Is this really needed?

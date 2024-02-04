@@ -20,14 +20,18 @@ About -r-> MainMenu
 
 MainMenu -r-> Settings
 MainMenu --> NewGameMenu
+MainMenu -u-> [*] : Exit
 
 NewGameMenu -> GameSession
 NewGameMenu --> MainMenu
+NewGameMenu --> Settings
 
 GameSession --> Settings
 GameSession -> MainMenu
+GameSession -u-> [*] : Exit
 
 Settings -> MainMenu
 Settings -> GameSession
+Settings -> NewGameMenu
 
 @enduml
