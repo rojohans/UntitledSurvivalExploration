@@ -13,8 +13,6 @@ namespace usea.graphics.gui
                                 UnityEngine.EventSystems.IPointerUpHandler
     {
         // PUBLIC
-        // TODO: Should this be defined in some utility place? There will be many classes which use "empty" callbacks.
-        public delegate void Callback(); // Da fuc isa dis?
 
         /*
         public EventEnabled()
@@ -29,27 +27,27 @@ namespace usea.graphics.gui
         }
         */
 
-        public void AddOnPointerClickCallback(Callback callback)
+        public void AddOnPointerClickCallback(util.types.Callback callback)
         {
             m_callbacks.onPointerClick += callback;
         }
 
-        public void AddOnPointerEnterCallback(Callback callback)
+        public void AddOnPointerEnterCallback(util.types.Callback callback)
         {
             m_callbacks.onPointerEnter += callback;
         }
 
-        public void AddOnPointerExitCallback(Callback callback)
+        public void AddOnPointerExitCallback(util.types.Callback callback)
         {
             m_callbacks.onPointerExit += callback;
         }
 
-        public void AddOnPointerDownCallback(Callback callback)
+        public void AddOnPointerDownCallback(util.types.Callback callback)
         {
             m_callbacks.onPointerDown += callback;
         }
 
-        public void AddOnPointerUpCallback(Callback callback)
+        public void AddOnPointerUpCallback(util.types.Callback callback)
         {
             m_callbacks.onPointerUp += callback;
         }
@@ -94,11 +92,11 @@ namespace usea.graphics.gui
 
         private struct Callbacks
         {
-            public event Callback onPointerClick;
-            public event Callback onPointerEnter;
-            public event Callback onPointerExit;
-            public event Callback onPointerDown;
-            public event Callback onPointerUp;
+            public event util.types.Callback onPointerClick;
+            public event util.types.Callback onPointerEnter;
+            public event util.types.Callback onPointerExit;
+            public event util.types.Callback onPointerDown;
+            public event util.types.Callback onPointerUp;
             public void OnPointerClick() { onPointerClick?.Invoke(); }
             public void OnPointerEnter() { onPointerEnter?.Invoke(); }
             public void OnPointerExit() { onPointerExit?.Invoke(); }

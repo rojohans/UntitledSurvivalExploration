@@ -11,13 +11,7 @@ namespace usea.graphics.gui
     /// </summary>
     public partial class Toggle : EventEnabled
     {
-        // ###### PUBLIC ######
-        public partial void Awake();
-        public partial void SetOnCallback(Callback callback);
-        public partial void SetOffCallback(Callback callback);
-        public partial void SetTooltip(string message);
-
-        // ###### PRIVATE ######
+        // ###### TYPES ######
         [System.Serializable]
         private struct ColourSettings
         {
@@ -35,6 +29,13 @@ namespace usea.graphics.gui
             OFF_HIGHLIGHT
         };
 
+        // ###### PUBLIC ######
+        public partial void Awake();
+        public partial void SetOnCallback(util.types.Callback callback);
+        public partial void SetOffCallback(util.types.Callback callback);
+        public partial void SetTooltip(string message);
+
+        // ###### PRIVATE ######
         private partial void SetInitialCallbacks();
         private partial void UpdateImageColours();
 
@@ -45,8 +46,8 @@ namespace usea.graphics.gui
         [Header("Components")]
         [SerializeField] private UnityEngine.UI.Image m_backgroundImage;
         [SerializeField] private UnityEngine.UI.Image m_centerImage;
-        private event Callback m_onCallback;
-        private event Callback m_offCallback;
+        private event util.types.Callback m_onCallback;
+        private event util.types.Callback m_offCallback;
         private ToggleState m_state;
     }
 
@@ -59,12 +60,12 @@ namespace usea.graphics.gui
             UpdateImageColours();
         }
 
-        public partial void SetOnCallback(Callback callback)
+        public partial void SetOnCallback(util.types.Callback callback)
         {
             m_onCallback += callback;
         }
 
-        public partial void SetOffCallback(Callback callback)
+        public partial void SetOffCallback(util.types.Callback callback)
         {
             m_offCallback += callback;
         }
@@ -86,7 +87,7 @@ namespace usea.graphics.gui
 
         private partial void SetInitialCallbacks()
         {
-            Dictionary<ToggleState, Callback> callbacks = new()
+            Dictionary<ToggleState, util.types.Callback> callbacks = new()
             {
                 {ToggleState.ON_HIGHLIGHT, m_onCallback},
                 {ToggleState.OFF_HIGHLIGHT, m_offCallback}

@@ -1,5 +1,7 @@
 
 using UnityEngine;
+using usea.func.engine;
+using usea.func.task;
 
 namespace usea.graphics.scene
 {
@@ -43,6 +45,14 @@ namespace usea.graphics.scene
         protected override partial void Initialize()
         {
             m_view.m_newgameButton.AddOnPointerClickCallback(() => { m_onOpenNewGameMenu(); });
+            m_view.m_newgameButton.AddOnPointerClickCallback(() =>
+            {
+                // TEMPORARY: This is just for testing.
+                new EngineWrapper(new ExampleTask()).Schedule(() => { print("Task 1 is done"); });
+                new EngineWrapper(new ExampleTask()).Schedule(() => { print("Task 2 is done"); }, true);
+                new EngineWrapper(new ExampleTask()).Schedule(() => { print("Task 3 is done"); });
+            });
+
             m_view.m_settingsButton.AddOnPointerClickCallback(() => { m_onOpenSettings(); });
             m_view.m_aboutButton.AddOnPointerClickCallback(() => { m_onOpenAbout(); });
             m_view.m_closeProgramButton.AddOnPointerClickCallback(() => { m_onCloseProgram(); });

@@ -49,7 +49,7 @@ namespace usea.graphics
 
         public partial void ShowTooltipOnObject(MonoBehaviour guiObject, string message)
         {
-            //
+            // QUESTION: Should this be implemented?
         }
     }
 

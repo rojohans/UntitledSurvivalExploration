@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace usea.graphics.controller
 {
+    /// <summary>
+    /// Base class for all coordinators/controllers in a mvc (Model, View, Controller) triplet.
+    /// </summary>
     public abstract partial class Controller : MonoBehaviour
     {
         // ###### PUBLIC ######
@@ -14,8 +17,8 @@ namespace usea.graphics.controller
         /// Used for settings callbacks for all owned gui objects.
         /// </summary>
         protected abstract void Initialize();
-        protected abstract void Show(); // Question: Is this really needed?
-        protected abstract void Hide(); // Question: Is this really needed?
+        protected abstract void Show(); // QUESTION: Is this really needed?
+        protected abstract void Hide(); // QUESTION: Is this really needed?
 
         // ###### PRIVATE ######
         private bool m_isInitialized;

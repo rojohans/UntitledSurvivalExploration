@@ -45,9 +45,9 @@ namespace usea.graphics.gui
 
     abstract public class InteractableGuiWithValue : InteractableGui
     {
-        public event Callback _onValueChangedCallback;
+        public event util.types.Callback _onValueChangedCallback;
 
-        public void AddOnValueChangedCallback(Callback callback)
+        public void AddOnValueChangedCallback(util.types.Callback callback)
         {
             _onValueChangedCallback += callback;
         }

@@ -10,7 +10,8 @@ namespace usea.graphics
     public enum GuiObjectTypeE
     {
         NONE,
-        TOOLTIP
+        TOOLTIP,
+        FRAME_TICKER
     };
 
     /// <summary>
@@ -19,10 +20,6 @@ namespace usea.graphics
     public partial class GuiRegistry
     {
         // ###### PUBLIC ######
-        public GuiRegistry()
-        {
-            m_guiObjects = new Dictionary<GuiObjectTypeE, controller.Controller>();
-        }
         public partial void AddGuiObject(GuiObjectTypeE key, controller.Controller value);
         public partial controller.Controller GetGuiObject(GuiObjectTypeE key);
 
@@ -32,6 +29,11 @@ namespace usea.graphics
 
     public partial class GuiRegistry
     {
+        public GuiRegistry()
+        {
+            m_guiObjects = new Dictionary<GuiObjectTypeE, controller.Controller>();
+        }
+
         public partial void AddGuiObject(GuiObjectTypeE key, controller.Controller value)
         {
             if (m_guiObjects.ContainsKey(key))
