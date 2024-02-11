@@ -4,6 +4,5 @@ var dir_f13b41af88cf68434578284aaf699e39 =
     [ "Functionality", "dir_0c4fa65e9d37085d038ea0841a232241.html", "dir_0c4fa65e9d37085d038ea0841a232241" ],
     [ "Graphics", "dir_db13386a54868aab4970655b0db76d49.html", "dir_db13386a54868aab4970655b0db76d49" ],
     [ "Main", "dir_94e32d1804da315c6ddf741a071057f0.html", "dir_94e32d1804da315c6ddf741a071057f0" ],
-    [ "Utility", "dir_bb6faf50f576cdf733307d85a6d675ac.html", "dir_bb6faf50f576cdf733307d85a6d675ac" ],
-    [ "mvc_architecture.png", "mvc__architecture_8png.html", null ]
+    [ "Utility", "dir_bb6faf50f576cdf733307d85a6d675ac.html", "dir_bb6faf50f576cdf733307d85a6d675ac" ]
 ];

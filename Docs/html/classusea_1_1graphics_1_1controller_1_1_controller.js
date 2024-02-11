@@ -1,13 +1,12 @@
 var classusea_1_1graphics_1_1controller_1_1_controller =
 [
-    [ "Hide", "classusea_1_1graphics_1_1controller_1_1_controller.html#a56d89899e02ca332c7cac11d85f63b82", null ],
-    [ "Initialize", "classusea_1_1graphics_1_1controller_1_1_controller.html#a698f43b0a26a64db016e2fe6500d9fcb", null ],
-    [ "OnDisable", "classusea_1_1graphics_1_1controller_1_1_controller.html#a1b794e888add4b159f28b32ed5ec600b", null ],
-    [ "OnDisable", "classusea_1_1graphics_1_1controller_1_1_controller.html#a1b794e888add4b159f28b32ed5ec600b", null ],
-    [ "OnEnable", "classusea_1_1graphics_1_1controller_1_1_controller.html#ac5d39741fa789d22b1f1adc7e4b7ff9d", null ],
-    [ "OnEnable", "classusea_1_1graphics_1_1controller_1_1_controller.html#ac5d39741fa789d22b1f1adc7e4b7ff9d", null ],
-    [ "Show", "classusea_1_1graphics_1_1controller_1_1_controller.html#ac25f8bee8812f36c939c41af8f634503", null ],
-    [ "m_isInitialized", "classusea_1_1graphics_1_1controller_1_1_controller.html#a4795d87a1658fb93f58757a7d826eceb", null ],
-    [ "m_model", "classusea_1_1graphics_1_1controller_1_1_controller.html#a954e9ca7867ce3096849b7d8327732ac", null ],
-    [ "m_view", "classusea_1_1graphics_1_1controller_1_1_controller.html#a843908cffe3160826095c135512c137e", null ]
+    [ "Hide", "classusea_1_1graphics_1_1controller_1_1_controller.html#ae14607d5204e56419555164a2c0d209d", null ],
+    [ "Initialize", "classusea_1_1graphics_1_1controller_1_1_controller.html#a32d3667e8b6fdf28ccf73286297d8bcd", null ],
+    [ "OnDisable", "classusea_1_1graphics_1_1controller_1_1_controller.html#adf5896bc04c69effdbf36fbd5029d8c5", null ],
+    [ "OnDisable", "classusea_1_1graphics_1_1controller_1_1_controller.html#adf5896bc04c69effdbf36fbd5029d8c5", null ],
+    [ "OnEnable", "classusea_1_1graphics_1_1controller_1_1_controller.html#a80a5d630cdfb2027af18a5dc996fd345", null ],
+    [ "OnEnable", "classusea_1_1graphics_1_1controller_1_1_controller.html#a80a5d630cdfb2027af18a5dc996fd345", null ],
+    [ "Show", "classusea_1_1graphics_1_1controller_1_1_controller.html#a62c3a674156e326ac4c7b7f4fe16e735", null ],
+    [ "m_isInitialized", "classusea_1_1graphics_1_1controller_1_1_controller.html#a249507f47125fb8c1b1552cb8fd0c23c", null ],
+    [ "m_name", "classusea_1_1graphics_1_1controller_1_1_controller.html#afd4a48bf75c2d9c55ad89bb1e07763c1", null ]
 ];

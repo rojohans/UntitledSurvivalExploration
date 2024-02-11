@@ -1,13 +1,11 @@
 var classusea_1_1graphics_1_1gui_1_1_event_enabled =
 [
     [ "Callbacks", "structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks.html", "structusea_1_1graphics_1_1gui_1_1_event_enabled_1_1_callbacks" ],
-    [ "EventEnabled", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a049bc9590441dfccfed800455ec6d1fd", null ],
-    [ "AddOnPointerClickCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a7e62b4443fba7c8b5970c9023d3fa663", null ],
-    [ "AddOnPointerDownCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#ab071be386eca206f7af45e10faa2b746", null ],
-    [ "AddOnPointerEnterCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#ad0e37675bd31fb59604cabd131c9657f", null ],
-    [ "AddOnPointerExitCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a3380843ed8818536d0658758038f0517", null ],
-    [ "AddOnPointerUpCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a5638a5556fe87207f39c4219ab5cc98d", null ],
-    [ "Callback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a1178c0e11427360dbab9165d23179951", null ],
+    [ "AddOnPointerClickCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a33294d56d3376590d8d1eea880226a83", null ],
+    [ "AddOnPointerDownCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a7d2b3eb7ae6a2ec982b65dac4aaf511f", null ],
+    [ "AddOnPointerEnterCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#aed90d74727bb1ef313065cd2318dcb86", null ],
+    [ "AddOnPointerExitCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a8b1e8b9e88fb3f60701dd5b2418a7f5a", null ],
+    [ "AddOnPointerUpCallback", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a8e8049349cb7254d652eb7df73ddc996", null ],
     [ "OnPointerClick", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a09452ee3db15cdceb76884b5a58e6343", null ],
     [ "OnPointerDown", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a39881067ada1677c9d5e879e2fc2f572", null ],
     [ "OnPointerEnter", "classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a763e6d5f23b84e58b16ecb3edd69a33c", null ],

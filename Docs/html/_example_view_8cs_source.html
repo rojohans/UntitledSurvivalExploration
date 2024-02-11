@@ -100,35 +100,30 @@ $(function(){initNavTree('_example_view_8cs_source.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 <a href="_example_view_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>UnityEngine.UI;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceusea_1_1graphics_1_1view.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceusea_1_1graphics_1_1view.html">usea.graphics.view</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html">    8</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classusea_1_1graphics_1_1view_1_1_example_view.html">ExampleView</a> : <a class="code hl_class" href="class_mono_behaviour.html">MonoBehaviour</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a6e87ca225db25a93f575d5511ee4b21a">   10</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a6e87ca225db25a93f575d5511ee4b21a">UpdateBar</a>(<span class="keywordtype">float</span> newValue)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            m_slider.value = newValue;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        }</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine.UI;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespaceusea_1_1graphics_1_1view.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceusea_1_1graphics_1_1view.html">usea.graphics.view</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html">    7</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classusea_1_1graphics_1_1view_1_1_example_view.html">ExampleView</a> : MonoBehaviour</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="comment">// ###### PUBLIC ######</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a702b4f2d37e44ec7a4f84b75ce77deff">   10</a></span>        <span class="keyword">public</span> Slider <a class="code hl_variable" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a702b4f2d37e44ec7a4f84b75ce77deff">m_slider</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html#aca53960a7400d8054619826f889b4b51">   11</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="classusea_1_1graphics_1_1gui_1_1_button.html">gui.Button</a> <a class="code hl_variable" href="classusea_1_1graphics_1_1view_1_1_example_view.html#aca53960a7400d8054619826f889b4b51">m_button</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a7b400f445952c61b0ba81f2b0fb86d22">   12</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="classusea_1_1graphics_1_1gui_1_1_toggle.html">gui.Toggle</a> <a class="code hl_variable" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a7b400f445952c61b0ba81f2b0fb86d22">m_toggle</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a702b4f2d37e44ec7a4f84b75ce77deff">   15</a></span>        <span class="keyword">public</span> Slider <a class="code hl_variable" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a702b4f2d37e44ec7a4f84b75ce77deff">m_slider</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a23b824d05cb8ebfb161deae0b2645618">   16</a></span>        <span class="keyword">public</span> Button <a class="code hl_variable" href="classusea_1_1graphics_1_1view_1_1_example_view.html#a23b824d05cb8ebfb161deae0b2645618">m_button</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-</div>
-<div class="ttc" id="aclass_mono_behaviour_html"><div class="ttname"><a href="class_mono_behaviour.html">MonoBehaviour</a></div></div>
-<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html">usea.graphics.view.ExampleView</a></div><div class="ttdef"><b>Definition</b> <a href="#l00008">ExampleView.cs:9</a></div></div>
-<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html_a23b824d05cb8ebfb161deae0b2645618"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html#a23b824d05cb8ebfb161deae0b2645618">usea.graphics.view.ExampleView.m_button</a></div><div class="ttdeci">Button m_button</div><div class="ttdef"><b>Definition</b> <a href="#l00016">ExampleView.cs:16</a></div></div>
-<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html_a6e87ca225db25a93f575d5511ee4b21a"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html#a6e87ca225db25a93f575d5511ee4b21a">usea.graphics.view.ExampleView.UpdateBar</a></div><div class="ttdeci">void UpdateBar(float newValue)</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ExampleView.cs:10</a></div></div>
-<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html_a702b4f2d37e44ec7a4f84b75ce77deff"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html#a702b4f2d37e44ec7a4f84b75ce77deff">usea.graphics.view.ExampleView.m_slider</a></div><div class="ttdeci">Slider m_slider</div><div class="ttdef"><b>Definition</b> <a href="#l00015">ExampleView.cs:15</a></div></div>
-<div class="ttc" id="anamespaceusea_1_1graphics_1_1view_html"><div class="ttname"><a href="namespaceusea_1_1graphics_1_1view.html">usea.graphics.view</a></div><div class="ttdef"><b>Definition</b> <a href="#l00006">ExampleView.cs:7</a></div></div>
+<div class="ttc" id="aclassusea_1_1graphics_1_1gui_1_1_button_html"><div class="ttname"><a href="classusea_1_1graphics_1_1gui_1_1_button.html">usea.graphics.gui.Button</a></div><div class="ttdoc">A custom implementation of a button. Has more flexible callbacks than Unity's default button implemen...</div><div class="ttdef"><b>Definition</b> <a href="_button_8cs_source.html#l00014">Button.cs:15</a></div></div>
+<div class="ttc" id="aclassusea_1_1graphics_1_1gui_1_1_toggle_html"><div class="ttname"><a href="classusea_1_1graphics_1_1gui_1_1_toggle.html">usea.graphics.gui.Toggle</a></div><div class="ttdoc">A custom implementation of a toggle button. Can be either on or off.</div><div class="ttdef"><b>Definition</b> <a href="_toggle_8cs_source.html#l00012">Toggle.cs:13</a></div></div>
+<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html">usea.graphics.view.ExampleView</a></div><div class="ttdef"><b>Definition</b> <a href="#l00007">ExampleView.cs:8</a></div></div>
+<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html_a702b4f2d37e44ec7a4f84b75ce77deff"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html#a702b4f2d37e44ec7a4f84b75ce77deff">usea.graphics.view.ExampleView.m_slider</a></div><div class="ttdeci">Slider m_slider</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ExampleView.cs:10</a></div></div>
+<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html_a7b400f445952c61b0ba81f2b0fb86d22"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html#a7b400f445952c61b0ba81f2b0fb86d22">usea.graphics.view.ExampleView.m_toggle</a></div><div class="ttdeci">gui.Toggle m_toggle</div><div class="ttdef"><b>Definition</b> <a href="#l00012">ExampleView.cs:12</a></div></div>
+<div class="ttc" id="aclassusea_1_1graphics_1_1view_1_1_example_view_html_aca53960a7400d8054619826f889b4b51"><div class="ttname"><a href="classusea_1_1graphics_1_1view_1_1_example_view.html#aca53960a7400d8054619826f889b4b51">usea.graphics.view.ExampleView.m_button</a></div><div class="ttdeci">gui.Button m_button</div><div class="ttdef"><b>Definition</b> <a href="#l00011">ExampleView.cs:11</a></div></div>
+<div class="ttc" id="anamespaceusea_1_1graphics_1_1view_html"><div class="ttname"><a href="namespaceusea_1_1graphics_1_1view.html">usea.graphics.view</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">ExampleView.cs:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

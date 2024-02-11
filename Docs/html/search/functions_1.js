@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['addonpointerclickcallback_0',['AddOnPointerClickCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a7e62b4443fba7c8b5970c9023d3fa663',1,'usea::graphics::gui::EventEnabled']]],
-  ['addonpointerdowncallback_1',['AddOnPointerDownCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#ab071be386eca206f7af45e10faa2b746',1,'usea::graphics::gui::EventEnabled']]],
-  ['addonpointerentercallback_2',['AddOnPointerEnterCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#ad0e37675bd31fb59604cabd131c9657f',1,'usea::graphics::gui::EventEnabled']]],
-  ['addonpointerexitcallback_3',['AddOnPointerExitCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a3380843ed8818536d0658758038f0517',1,'usea::graphics::gui::EventEnabled']]],
-  ['addonpointerupcallback_4',['AddOnPointerUpCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a5638a5556fe87207f39c4219ab5cc98d',1,'usea::graphics::gui::EventEnabled']]],
-  ['addonvaluechangedcallback_5',['AddOnValueChangedCallback',['../classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value.html#a3deaed01b96b9d75361e9d68b6e62698',1,'usea::graphics::gui::InteractableGuiWithValue']]],
-  ['awake_6',['Awake',['../classusea_1_1graphics_1_1gui_1_1_button.html#a094328959201c6775b459c8f9e2d5255',1,'usea::graphics::gui::Button']]]
+  ['activate_0',['Activate',['../classusea_1_1graphics_1_1controller_1_1_tooltip_controller.html#ab78aeff922fc9920427e21d554dfb3b5',1,'usea.graphics.controller.TooltipController.Activate(string message)'],['../classusea_1_1graphics_1_1controller_1_1_tooltip_controller.html#ab78aeff922fc9920427e21d554dfb3b5',1,'usea.graphics.controller.TooltipController.Activate(string message)']]],
+  ['addguiobject_1',['AddGuiObject',['../classusea_1_1graphics_1_1_gui_registry.html#a927a4bfaa91c148ac6cd0100d73f404f',1,'usea.graphics.GuiRegistry.AddGuiObject(GuiObjectTypeE key, controller.Controller value)'],['../classusea_1_1graphics_1_1_gui_registry.html#a927a4bfaa91c148ac6cd0100d73f404f',1,'usea.graphics.GuiRegistry.AddGuiObject(GuiObjectTypeE key, controller.Controller value)']]],
+  ['addonpointerclickcallback_2',['AddOnPointerClickCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a33294d56d3376590d8d1eea880226a83',1,'usea::graphics::gui::EventEnabled']]],
+  ['addonpointerdowncallback_3',['AddOnPointerDownCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a7d2b3eb7ae6a2ec982b65dac4aaf511f',1,'usea::graphics::gui::EventEnabled']]],
+  ['addonpointerentercallback_4',['AddOnPointerEnterCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#aed90d74727bb1ef313065cd2318dcb86',1,'usea::graphics::gui::EventEnabled']]],
+  ['addonpointerexitcallback_5',['AddOnPointerExitCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a8b1e8b9e88fb3f60701dd5b2418a7f5a',1,'usea::graphics::gui::EventEnabled']]],
+  ['addonpointerupcallback_6',['AddOnPointerUpCallback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a8e8049349cb7254d652eb7df73ddc996',1,'usea::graphics::gui::EventEnabled']]],
+  ['addonvaluechangedcallback_7',['AddOnValueChangedCallback',['../classusea_1_1graphics_1_1gui_1_1_interactable_gui_with_value.html#a4a331ac03b9e2cb56e15ff2a8db3582c',1,'usea::graphics::gui::InteractableGuiWithValue']]],
+  ['awake_8',['Awake',['../classusea_1_1graphics_1_1gui_1_1_button.html#a3e82bf1dd62a394fb07a15c27d12d021',1,'usea.graphics.gui.Button.Awake()'],['../classusea_1_1graphics_1_1gui_1_1_button.html#a3e82bf1dd62a394fb07a15c27d12d021',1,'usea.graphics.gui.Button.Awake()'],['../classusea_1_1graphics_1_1gui_1_1_toggle.html#a020fceaf3e5eaaca1451be9a914d7932',1,'usea.graphics.gui.Toggle.Awake()'],['../classusea_1_1graphics_1_1gui_1_1_toggle.html#a020fceaf3e5eaaca1451be9a914d7932',1,'usea.graphics.gui.Toggle.Awake()']]]
 ];

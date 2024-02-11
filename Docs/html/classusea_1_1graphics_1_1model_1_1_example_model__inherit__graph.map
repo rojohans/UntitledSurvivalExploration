@@ -1,5 +1,5 @@
 <map id="usea.graphics.model.ExampleModel" name="usea.graphics.model.ExampleModel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,193,272"/>
-<area shape="rect" id="Node000002" href="$class_mono_behaviour.html" title=" " alt="" coords="49,5,150,75"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,193,315"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="49,5,150,75"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,90,102,123,97,123,97,90"/>
 </map>

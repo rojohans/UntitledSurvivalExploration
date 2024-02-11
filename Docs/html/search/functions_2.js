@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['callback_0',['Callback',['../classusea_1_1graphics_1_1gui_1_1_event_enabled.html#a1178c0e11427360dbab9165d23179951',1,'usea::graphics::gui::EventEnabled']]]
+  ['callback_0',['Callback',['../namespaceusea_1_1util_1_1types.html#a37fbb97ffb84c13fdadf8336b5f639dc',1,'usea::util::types']]],
+  ['closeabout_1',['CloseAbout',['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#ac4f2651c068ccf3886abfdcae760dede',1,'usea.graphics.scene.SceneManager.CloseAbout()'],['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#ac4f2651c068ccf3886abfdcae760dede',1,'usea.graphics.scene.SceneManager.CloseAbout()']]],
+  ['closegamesession_2',['CloseGameSession',['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#a32c84913ca62a5e7206e4379e5f26a70',1,'usea.graphics.scene.SceneManager.CloseGameSession()'],['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#a32c84913ca62a5e7206e4379e5f26a70',1,'usea.graphics.scene.SceneManager.CloseGameSession()']]],
+  ['closenewgamemenu_3',['CloseNewGameMenu',['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#a0cc01801d672d2b8466298d00da485ef',1,'usea.graphics.scene.SceneManager.CloseNewGameMenu()'],['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#a0cc01801d672d2b8466298d00da485ef',1,'usea.graphics.scene.SceneManager.CloseNewGameMenu()']]],
+  ['closeprogram_4',['CloseProgram',['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#ac6da28be255399e8931a587212b6f57f',1,'usea.graphics.scene.SceneManager.CloseProgram()'],['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#ac6da28be255399e8931a587212b6f57f',1,'usea.graphics.scene.SceneManager.CloseProgram()']]],
+  ['closesettings_5',['CloseSettings',['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#a26822000c167845611ee8abd712eadd9',1,'usea.graphics.scene.SceneManager.CloseSettings()'],['../classusea_1_1graphics_1_1scene_1_1_scene_manager.html#a26822000c167845611ee8abd712eadd9',1,'usea.graphics.scene.SceneManager.CloseSettings()']]]
 ];

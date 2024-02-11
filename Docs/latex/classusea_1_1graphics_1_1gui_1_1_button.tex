@@ -2,7 +2,13 @@
 \hypertarget{classusea_1_1graphics_1_1gui_1_1_button}{}\label{classusea_1_1graphics_1_1gui_1_1_button}\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}}
 
 
-Inheritance diagram for usea.\+graphics.\+gui.\+Button\+:\nopagebreak
+A custom implementation of a button. Has more flexible callbacks than Unity\textquotesingle{}s default button implementation.  
+
+
+
+
+Inheritance diagram for usea.\+graphics.\+gui.\+Button\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +17,8 @@ Inheritance diagram for usea.\+graphics.\+gui.\+Button\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for usea.\+graphics.\+gui.\+Button\+:\nopagebreak
+Collaboration diagram for usea.\+graphics.\+gui.\+Button\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,24 +33,26 @@ struct \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_sett
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a094328959201c6775b459c8f9e2d5255}{Awake}} ()
+partial void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021}{Awake}} ()
+\item 
+partial void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c}{Set\+Tooltip}} (string message)
+\item 
+partial void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021}{Awake}} ()
+\item 
+partial void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c}{Set\+Tooltip}} (string message)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled}{usea.\+graphics.\+gui.\+Event\+Enabled}}}
 \begin{DoxyCompactItemize}
 \item 
-delegate void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}} ()
+void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a33294d56d3376590d8d1eea880226a83}{Add\+On\+Pointer\+Click\+Callback}} (\mbox{\hyperlink{namespaceusea_1_1util_1_1types_a37fbb97ffb84c13fdadf8336b5f639dc}{util.\+types.\+Callback}} callback)
 \item 
-\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a049bc9590441dfccfed800455ec6d1fd}{Event\+Enabled}} ()
+void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_aed90d74727bb1ef313065cd2318dcb86}{Add\+On\+Pointer\+Enter\+Callback}} (\mbox{\hyperlink{namespaceusea_1_1util_1_1types_a37fbb97ffb84c13fdadf8336b5f639dc}{util.\+types.\+Callback}} callback)
 \item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a7e62b4443fba7c8b5970c9023d3fa663}{Add\+On\+Pointer\+Click\+Callback}} (\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}} callback)
+void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a8b1e8b9e88fb3f60701dd5b2418a7f5a}{Add\+On\+Pointer\+Exit\+Callback}} (\mbox{\hyperlink{namespaceusea_1_1util_1_1types_a37fbb97ffb84c13fdadf8336b5f639dc}{util.\+types.\+Callback}} callback)
 \item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{Add\+On\+Pointer\+Enter\+Callback}} (\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}} callback)
+void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a7d2b3eb7ae6a2ec982b65dac4aaf511f}{Add\+On\+Pointer\+Down\+Callback}} (\mbox{\hyperlink{namespaceusea_1_1util_1_1types_a37fbb97ffb84c13fdadf8336b5f639dc}{util.\+types.\+Callback}} callback)
 \item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{Add\+On\+Pointer\+Exit\+Callback}} (\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}} callback)
-\item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{Add\+On\+Pointer\+Down\+Callback}} (\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}} callback)
-\item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{Add\+On\+Pointer\+Up\+Callback}} (\mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1178c0e11427360dbab9165d23179951}{Callback}} callback)
+void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a8e8049349cb7254d652eb7df73ddc996}{Add\+On\+Pointer\+Up\+Callback}} (\mbox{\hyperlink{namespaceusea_1_1util_1_1types_a37fbb97ffb84c13fdadf8336b5f639dc}{util.\+types.\+Callback}} callback)
 \item 
 void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a09452ee3db15cdceb76884b5a58e6343}{On\+Pointer\+Click}} (Unity\+Engine.\+Event\+Systems.\+Pointer\+Event\+Data event\+Data)
 \item 
@@ -55,139 +64,253 @@ void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a39881067ad
 \item 
 void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a1761934e0ae542c4437a31cb907ef881}{On\+Pointer\+Up}} (Unity\+Engine.\+Event\+Systems.\+Pointer\+Event\+Data event\+Data)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{box\+Colour}}
-\item 
-\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{text\+Colour}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c}{Set\+Colour\+Listeners}} ()
+partial void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f}{Set\+Colour\+Listeners}} ()
+\item 
+partial void \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f}{Set\+Colour\+Listeners}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6}{m\+\_\+box\+Colour}}
+\item 
+\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193}{m\+\_\+text\+Colour}}
+\item 
+\mbox{\hyperlink{_tooltip_view_8cs_a608db096452b7c3af254e6770ebfdc88}{Image}} \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a6d6fe9f66fd2108b649c17bf0df428d9}{m\+\_\+image}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a20b7c49896bdcdbff71c1041e9573816}{m\+\_\+text}}
+\item 
+bool \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}{m\+\_\+is\+Cursor\+On\+This\+Object}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+A custom implementation of a button. Has more flexible callbacks than Unity\textquotesingle{}s default button implementation. 
 
+@\+TODO\+: Set\+Sound\+Listener functionality @\+TODO\+: Set\+Image functionality 
 
-Definition at line \mbox{\hyperlink{_button_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a094328959201c6775b459c8f9e2d5255}\label{classusea_1_1graphics_1_1gui_1_1_button_a094328959201c6775b459c8f9e2d5255} 
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021}\label{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021} 
 \index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!Awake@{Awake}}
 \index{Awake@{Awake}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
-\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
-{\footnotesize\ttfamily void usea.\+graphics.\+gui.\+Button.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily partial void usea.\+graphics.\+gui.\+Button.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021}\label{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!Awake@{Awake}}
+\index{Awake@{Awake}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily partial void usea.\+graphics.\+gui.\+Button.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_button_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SetSoundListeners();}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SetTooltipListeners();}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c}{SetColourListeners}}();}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}{m\_isCursorOnThisObject}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SetSoundListeners();}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//SetTooltipListeners();}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f}{SetColourListeners}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_button_8cs_source_l00028}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
+References \mbox{\hyperlink{_button_8cs_source_l00037}{usea.\+graphics.\+gui.\+Button.\+m\+\_\+is\+Cursor\+On\+This\+Object}}, and \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_a094328959201c6775b459c8f9e2d5255_cgraph}
+\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_a3e82bf1dd62a394fb07a15c27d12d021_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c}\label{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c} 
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f}\label{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f} 
 \index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!SetColourListeners@{SetColourListeners}}
 \index{SetColourListeners@{SetColourListeners}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
-\doxysubsubsection{\texorpdfstring{SetColourListeners()}{SetColourListeners()}}
-{\footnotesize\ttfamily void usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{\texorpdfstring{SetColourListeners()}{SetColourListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily partial void usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \mbox{\hyperlink{_button_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+Referenced by \mbox{\hyperlink{_button_8cs_source_l00042}{usea.\+graphics.\+gui.\+Button.\+Awake()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f}\label{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!SetColourListeners@{SetColourListeners}}
+\index{SetColourListeners@{SetColourListeners}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{SetColourListeners()}{SetColourListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily partial void usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ Image\ image\ =\ transform.Find(\textcolor{stringliteral}{"{}Image"{}}).GetComponent<Image>();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ boxColour.normal\ =\ image.color;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{AddOnPointerEnterCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};\ \});}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{AddOnPointerExitCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{AddOnPointerDownCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};\ \});}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{AddOnPointerUpCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ TMP\_Text\ text\ =\ transform.Find(\textcolor{stringliteral}{"{}Text"{}}).GetComponent<TMP\_Text>();}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ textColour.normal\ =\ text.color;}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ad0e37675bd31fb59604cabd131c9657f}{AddOnPointerEnterCallback}}(()\ =>\ \{\ text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};\ \});}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a3380843ed8818536d0658758038f0517}{AddOnPointerExitCallback}}(()\ =>\ \{\ text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_ab071be386eca206f7af45e10faa2b746}{AddOnPointerDownCallback}}(()\ =>\ \{\ text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}{textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};\ \});}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a5638a5556fe87207f39c4219ab5cc98d}{AddOnPointerUpCallback}}(()\ =>\ \{\ image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}{boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};\ \});}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_aed90d74727bb1ef313065cd2318dcb86}{AddOnPointerEnterCallback}}(()\ =>}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}{m\_isCursorOnThisObject}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6}{m\_boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193}{m\_textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a2b88c149af604c8acbc8fc30cfc2e7e6}{onPointerEnter}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a8b1e8b9e88fb3f60701dd5b2418a7f5a}{AddOnPointerExitCallback}}(()\ =>}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}{m\_isCursorOnThisObject}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6}{m\_boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193}{m\_textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a7d2b3eb7ae6a2ec982b65dac4aaf511f}{AddOnPointerDownCallback}}(()\ =>}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6}{m\_boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193}{m\_textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_a1dbbcbc9ea92f917493ee13d6788492f}{onPointerClick}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a8e8049349cb7254d652eb7df73ddc996}{AddOnPointerUpCallback}}(()\ =>}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_image.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}{m\_isCursorOnThisObject}}\ ?\ m\_boxColour.onPointerEnter\ :\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6}{m\_boxColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_text.color\ =\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}{m\_isCursorOnThisObject}}\ ?\ m\_textColour.onPointerEnter\ :\ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193}{m\_textColour}}.\mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings_aa956177a4d52bc507dd28898d166a370}{normal}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_event_enabled_8cs_source_l00053}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Down\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00041}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Enter\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00047}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Exit\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00059}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Up\+Callback()}}, \mbox{\hyperlink{_button_8cs_source_l00018}{usea.\+graphics.\+gui.\+Button.\+box\+Colour}}, \mbox{\hyperlink{_button_8cs_source_l00012}{usea.\+graphics.\+gui.\+Button.\+Colour\+Settings.\+normal}}, \mbox{\hyperlink{_button_8cs_source_l00014}{usea.\+graphics.\+gui.\+Button.\+Colour\+Settings.\+on\+Pointer\+Click}}, \mbox{\hyperlink{_button_8cs_source_l00013}{usea.\+graphics.\+gui.\+Button.\+Colour\+Settings.\+on\+Pointer\+Enter}}, and \mbox{\hyperlink{_button_8cs_source_l00019}{usea.\+graphics.\+gui.\+Button.\+text\+Colour}}.
+References \mbox{\hyperlink{_event_enabled_8cs_source_l00045}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Down\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00035}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Enter\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00040}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Exit\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00050}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Up\+Callback()}}, \mbox{\hyperlink{_button_8cs_source_l00031}{usea.\+graphics.\+gui.\+Button.\+m\+\_\+box\+Colour}}, \mbox{\hyperlink{_button_8cs_source_l00037}{usea.\+graphics.\+gui.\+Button.\+m\+\_\+is\+Cursor\+On\+This\+Object}}, \mbox{\hyperlink{_button_8cs_source_l00032}{usea.\+graphics.\+gui.\+Button.\+m\+\_\+text\+Colour}}, \mbox{\hyperlink{_button_8cs_source_l00025}{usea.\+graphics.\+gui.\+Button.\+Colour\+Settings.\+normal}}, \mbox{\hyperlink{_button_8cs_source_l00027}{usea.\+graphics.\+gui.\+Button.\+Colour\+Settings.\+on\+Pointer\+Click}}, and \mbox{\hyperlink{_button_8cs_source_l00026}{usea.\+graphics.\+gui.\+Button.\+Colour\+Settings.\+on\+Pointer\+Enter}}.
 
-
-
-Referenced by \mbox{\hyperlink{_button_8cs_source_l00021}{usea.\+graphics.\+gui.\+Button.\+Awake()}}.
-
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c_cgraph}
+\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_a18bc50a79fce013f716f5dee5e23fd0f_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c}\label{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!SetTooltip@{SetTooltip}}
+\index{SetTooltip@{SetTooltip}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{SetTooltip()}{SetTooltip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily partial void usea.\+graphics.\+gui.\+Button.\+Set\+Tooltip (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c}\label{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!SetTooltip@{SetTooltip}}
+\index{SetTooltip@{SetTooltip}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{SetTooltip()}{SetTooltip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily partial void usea.\+graphics.\+gui.\+Button.\+Set\+Tooltip (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_aed90d74727bb1ef313065cd2318dcb86}{AddOnPointerEnterCallback}}(()\ =>}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller}{TooltipController}}\ a\ =\ (\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller}{TooltipController}})GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller_ab78aeff922fc9920427e21d554dfb3b5}{Activate}}(message);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1gui_1_1_event_enabled_a8b1e8b9e88fb3f60701dd5b2418a7f5a}{AddOnPointerExitCallback}}(()\ =>}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller}{TooltipController}}\ a\ =\ (\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller}{TooltipController}})GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.\mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller_ad5f289fa351450e56c6896aebc84d57d}{Deactivate}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller_ab78aeff922fc9920427e21d554dfb3b5}{usea.\+graphics.\+controller.\+Tooltip\+Controller.\+Activate()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00035}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Enter\+Callback()}}, \mbox{\hyperlink{_event_enabled_8cs_source_l00040}{usea.\+graphics.\+gui.\+Event\+Enabled.\+Add\+On\+Pointer\+Exit\+Callback()}}, \mbox{\hyperlink{classusea_1_1graphics_1_1controller_1_1_tooltip_controller_ad5f289fa351450e56c6896aebc84d57d}{usea.\+graphics.\+controller.\+Tooltip\+Controller.\+Deactivate()}}, \mbox{\hyperlink{classusea_1_1graphics_1_1_gui_manager_add22a9fddf32e8298ae0d16d77bd6ae8}{usea.\+graphics.\+Gui\+Manager.\+Get()}}, and \mbox{\hyperlink{classusea_1_1graphics_1_1_gui_manager_aba5a49a22c3ebab6a1a6df53ac55973a}{usea.\+graphics.\+Gui\+Manager.\+Get\+Object()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_a86c2386dcb6cd2765978786b15211f2c_icgraph}
+\includegraphics[width=350pt]{classusea_1_1graphics_1_1gui_1_1_button_abd57efbd0ec03156231facb30935a58c_cgraph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3}\label{classusea_1_1graphics_1_1gui_1_1_button_af468db7661b139a7da1b133366e524d3} 
-\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!boxColour@{boxColour}}
-\index{boxColour@{boxColour}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
-\doxysubsubsection{\texorpdfstring{boxColour}{boxColour}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} usea.\+graphics.\+gui.\+Button.\+box\+Colour}
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6}\label{classusea_1_1graphics_1_1gui_1_1_button_a7129903325b0dec6f169224df04517e6} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!m\_boxColour@{m\_boxColour}}
+\index{m\_boxColour@{m\_boxColour}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{m\_boxColour}{m\_boxColour}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} usea.\+graphics.\+gui.\+Button.\+m\+\_\+box\+Colour\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \mbox{\hyperlink{_button_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
 
 
 
-Referenced by \mbox{\hyperlink{_button_8cs_source_l00028}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
+Referenced by \mbox{\hyperlink{_button_8cs_source_l00065}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
 
-\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f}\label{classusea_1_1graphics_1_1gui_1_1_button_a619580967253c2399a89dd160628256f} 
-\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!textColour@{textColour}}
-\index{textColour@{textColour}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
-\doxysubsubsection{\texorpdfstring{textColour}{textColour}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} usea.\+graphics.\+gui.\+Button.\+text\+Colour}
-
-
-
-Definition at line \mbox{\hyperlink{_button_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a6d6fe9f66fd2108b649c17bf0df428d9}\label{classusea_1_1graphics_1_1gui_1_1_button_a6d6fe9f66fd2108b649c17bf0df428d9} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!m\_image@{m\_image}}
+\index{m\_image@{m\_image}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{m\_image}{m\_image}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_tooltip_view_8cs_a608db096452b7c3af254e6770ebfdc88}{Image}} usea.\+graphics.\+gui.\+Button.\+m\+\_\+image\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Referenced by \mbox{\hyperlink{_button_8cs_source_l00028}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8}\label{classusea_1_1graphics_1_1gui_1_1_button_a9c4313338bbe7de474de27dda53a0cb8} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!m\_isCursorOnThisObject@{m\_isCursorOnThisObject}}
+\index{m\_isCursorOnThisObject@{m\_isCursorOnThisObject}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{m\_isCursorOnThisObject}{m\_isCursorOnThisObject}}
+{\footnotesize\ttfamily bool usea.\+graphics.\+gui.\+Button.\+m\+\_\+is\+Cursor\+On\+This\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_button_8cs_source_l00042}{usea.\+graphics.\+gui.\+Button.\+Awake()}}, and \mbox{\hyperlink{_button_8cs_source_l00065}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
+
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a20b7c49896bdcdbff71c1041e9573816}\label{classusea_1_1graphics_1_1gui_1_1_button_a20b7c49896bdcdbff71c1041e9573816} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!m\_text@{m\_text}}
+\index{m\_text@{m\_text}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{m\_text}{m\_text}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text usea.\+graphics.\+gui.\+Button.\+m\+\_\+text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+
+\Hypertarget{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193}\label{classusea_1_1graphics_1_1gui_1_1_button_a4adaaeeaf51e359759af9f92f724a193} 
+\index{usea.graphics.gui.Button@{usea.graphics.gui.Button}!m\_textColour@{m\_textColour}}
+\index{m\_textColour@{m\_textColour}!usea.graphics.gui.Button@{usea.graphics.gui.Button}}
+\doxysubsubsection{\texorpdfstring{m\_textColour}{m\_textColour}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structusea_1_1graphics_1_1gui_1_1_button_1_1_colour_settings}{Colour\+Settings}} usea.\+graphics.\+gui.\+Button.\+m\+\_\+text\+Colour\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_button_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_button_8cs_source}{Button.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_button_8cs_source_l00065}{usea.\+graphics.\+gui.\+Button.\+Set\+Colour\+Listeners()}}.
 
 
 

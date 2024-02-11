@@ -9,6 +9,9 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Oo]ut/
+/[Dd]ocs/[Hh]tml/
+/[Dd]ocs/[Ll]atex/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
