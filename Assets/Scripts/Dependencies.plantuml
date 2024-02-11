@@ -88,15 +88,15 @@ package "<b>User" as User <<Cloud>>{
 }
 
 package Functionality <<node>> $FUNCTIONALITY_COLOUR{
-    package "<b>Service" as Service <<rectangle>>{
+    package "<b>Task" as Service <<rectangle>>{
     }
-    package "<b>SubService" as SubService <<rectangle>>{
+    package "<b>SubTask" as SubService <<rectangle>>{
     }
     package "<<Singleton>>\n   <b>Engine" as Engine <<rectangle>>{
     }
 }
 
-package "<b>Data" as Data <<Database>>{
+package "<<Singleton>>\n     <b>Data" as Data <<Database>>{
 }
 
 '--------------------------------

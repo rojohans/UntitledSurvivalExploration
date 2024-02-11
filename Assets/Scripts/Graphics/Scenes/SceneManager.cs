@@ -1,4 +1,5 @@
 
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace usea.graphics.scene
@@ -75,6 +76,9 @@ namespace usea.graphics.scene
 
         private partial void OpenSettings()
         {
+            // TEMPORARY: Just for testing.
+            uint a = data.Database.Get().GetGameplayData().GetNumberOfSettingsViews();
+            data.Database.Get().GetGameplayData().SetNumberOfSettingsViews(a + 1);
             SwitchScene(m_settingsScene);
         }
 
@@ -95,11 +99,13 @@ namespace usea.graphics.scene
 
         private partial void StartNewGameSession()
         {
+            new func.engine.EngineWrapper(new func.task.StartGameplaySession()).Schedule();
             SwitchScene(m_gameSessionScene);
         }
 
         private partial void CloseGameSession()
         {
+            new func.engine.EngineWrapper(new func.task.StopGameplaySession()).Schedule();
             SwitchScene(m_mainMenuScene);
         }
 

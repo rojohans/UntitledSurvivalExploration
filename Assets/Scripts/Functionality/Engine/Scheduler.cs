@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace usea.func.engine
 {
     /// <summary>
-    /// A class used to coordinate task execution. Only one task is executed at a time.
+    /// A class used to coordinate task execution. Only one task is executed at a time. This is a singleton.
     /// </summary>
     public partial class Scheduler
     {

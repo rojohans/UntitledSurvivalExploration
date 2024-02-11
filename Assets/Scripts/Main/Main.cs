@@ -23,7 +23,6 @@ namespace usea
             // m_eventExample = new events.EventExample();
             // m_eventExample.initialize();
 
-            data.Database.initialize();
         }
 
         //private events.EventExample m_eventExample;

@@ -4,6 +4,7 @@ namespace usea.func.engine
     /// <summary>
     /// A wrapper class, that enables tasks to be scheduled and timed. It also enables better logging for execution.
     /// </summary>
+    // QUESTION: Is this more complicated than necessary? Maybe a simple facade would be sufficient.
     public partial class EngineWrapper : ITask
     {
         // ###### PUBLIC ######
@@ -36,10 +37,10 @@ namespace usea.func.engine
             onExecutionDone += () =>
             {
                 stopWatch.Stop();
-                UnityEngine.MonoBehaviour.print("   EXECUTION DONE: " + m_task.GetName() + ", elapsed time: " + stopWatch.ElapsedMilliseconds + " ms");
+                // UnityEngine.MonoBehaviour.print("   EXECUTION DONE: " + m_task.GetName() + ", elapsed time: " + stopWatch.ElapsedMilliseconds + " ms");
             };
 
-            UnityEngine.MonoBehaviour.print("EXECUTION STARTED: " + m_task.GetName());
+            // UnityEngine.MonoBehaviour.print("EXECUTION STARTED: " + m_task.GetName());
             m_task.Execute(onExecutionDone);
         }
 
