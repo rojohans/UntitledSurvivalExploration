@@ -66,6 +66,7 @@ title Allowed dependencies
 !$GRAPHICS_COLOUR = "#6CD8A8"
 !$OBJECT_COLOUR = "#8DD86C"
 !$FUNCTIONALITY_COLOUR = "#D8946C"
+!$DATA_COLOUR = "#8984EE"
 
 package Graphics <<node>> $GRAPHICS_COLOUR{
 
@@ -96,10 +97,19 @@ package Functionality <<node>> $FUNCTIONALITY_COLOUR{
     }
 }
 
-package "<<Singleton>>\n     <b>Data" as Data <<Database>>{
+package "<<Singleton>>\n  <b>Data" as Data <<Database>> $DATA_COLOUR{
+    package "<b>Asset" as AssetData <<Database>>{
+    }
+    package "<b>Gameplay" as GameplayData <<Database>>{
+    }
+    package "<b>Settings" as SettingsData <<Database>>{
+    }
 }
 
 '--------------------------------
+
+SettingsData -d[hidden]- AssetData
+AssetData -d[hidden]- GameplayData
 
 GuiRegister "1" o.d.> "*" Controller : Stores
 
@@ -109,6 +119,7 @@ Controller "1" *--r-> "1" View : Update/Action
 Controller "1" ---> "*" Service : Inject into\nEngine
 Controller "*" ---> "1" Engine : Schedule\n&\nSetTimer
 Controller "*" -u-> "1" GuiManager : Access other\ncontrollers
+Controller --> Data : Read\n<b>Settings\n<b>Asset
 
 Model "1" <--l-* "1" Controller : Update
 Model ...> Controller : answer
@@ -117,8 +128,8 @@ View ...> Controller : Event Callback
 View <..r. User : Input
 View ..r.> User : Graphics & Audio
 
-Data <--l- Service : Read/Write
-Data <--l- SubService : Read/Write
+Data <--l- Service : Read/Write\n<b>Gameplay
+Data <--l- SubService : Read/Write\n<b>Gameplay
 
 Service ...> Controller : Answer
 Service "*" <--l-o "1" Engine : Execute
@@ -126,7 +137,6 @@ Service ...> Engine : Answer
 
 SubService ...> Service : Answer
 Service "1" *---> "*" SubService : Execute
-
 
 
 

@@ -1,6 +1,10 @@
 
 using UnityEngine;
 
+using usea.data.asset;
+using usea.data.gameplay;
+using usea.data.settings;
+
 namespace usea.data
 {
     /// <summary>
