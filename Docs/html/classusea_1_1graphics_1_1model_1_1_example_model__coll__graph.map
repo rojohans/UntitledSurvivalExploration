@@ -1,9 +1,0 @@
-<map id="usea.graphics.model.ExampleModel" name="usea.graphics.model.ExampleModel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="74,155,262,304"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,107,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,86,126,153,122,156,81,88"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="131,5,205,75"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,74,171,138,165,138,165,74"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="277,5,315,75"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="292,75,283,104,269,132,262,143,257,140,264,129,278,102,287,74"/>
-</map>

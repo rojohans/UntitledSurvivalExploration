@@ -1,9 +1,0 @@
-<map id="usea.graphics.controller.Controller" name="usea.graphics.controller.Controller">
-<area shape="rect" id="Node000001" title="Base class for all coordinators/controllers in a mvc (Model, View, Controller) triplet." alt="" coords="72,139,227,352"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,107,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,87,103,138,98,140,75,89"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="131,5,168,75"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,74,152,122,147,122,147,74"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="217,5,325,75"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,76,244,116,238,127,233,124,239,113,257,73"/>
-</map>
