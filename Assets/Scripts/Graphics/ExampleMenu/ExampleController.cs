@@ -1,10 +1,8 @@
 
-
-
 using UnityEngine;
+using UnityEngine.EventSystems;
 using usea.graphics.model;
 using usea.graphics.view;
-
 
 namespace usea.graphics.controller
 {
@@ -17,7 +15,7 @@ namespace usea.graphics.controller
         protected override partial void Initialize();
 
         // ###### PRIVATE ######
-        private partial void OnButtonPress();
+        private partial void OnButtonPress(PointerEventData eventData);
         [SerializeField] private ExampleModel m_model;
         [SerializeField] private ExampleView m_view;
     }
@@ -41,7 +39,7 @@ namespace usea.graphics.controller
             m_view.m_slider.value = m_model.GetChargeRate();
         }
 
-        private partial void OnButtonPress()
+        private partial void OnButtonPress(PointerEventData eventData)
         {
             print("OnButtonPress");
             m_model.IncreaseCharge();

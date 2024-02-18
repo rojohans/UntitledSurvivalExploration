@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 using usea.func.engine;
 using usea.func.task;
 
@@ -11,28 +12,28 @@ namespace usea.graphics.scene
     public partial class MainMenuScene : controller.Controller
     {
         // ###### PUBLIC ######
-        public partial void SetCallbacks(util.types.Callback onOpenAbout,
-                                         util.types.Callback onOpenSettings,
-                                         util.types.Callback onOpenNewGameMenu,
-                                         util.types.Callback onCloseProgram);
+        public partial void SetCallbacks(usea.util.types.Callback onOpenAbout,
+                                         usea.util.types.Callback onOpenSettings,
+                                         usea.util.types.Callback onOpenNewGameMenu,
+                                         usea.util.types.Callback onCloseProgram);
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
 
         // ###### PRIVATE ######
         [SerializeField] private view.MainMenuView m_view;
-        private util.types.Callback m_onOpenAbout;
-        private util.types.Callback m_onOpenSettings;
-        private util.types.Callback m_onOpenNewGameMenu;
-        private util.types.Callback m_onCloseProgram;
+        private usea.util.types.Callback m_onOpenAbout;
+        private usea.util.types.Callback m_onOpenSettings;
+        private usea.util.types.Callback m_onOpenNewGameMenu;
+        private usea.util.types.Callback m_onCloseProgram;
     }
 
     public partial class MainMenuScene : controller.Controller
     {
-        public partial void SetCallbacks(util.types.Callback onOpenAbout,
-                                         util.types.Callback onOpenSettings,
-                                         util.types.Callback onOpenNewGameMenu,
-                                         util.types.Callback onCloseProgram)
+        public partial void SetCallbacks(usea.util.types.Callback onOpenAbout,
+                                         usea.util.types.Callback onOpenSettings,
+                                         usea.util.types.Callback onOpenNewGameMenu,
+                                         usea.util.types.Callback onCloseProgram)
         {
             m_onOpenAbout = onOpenAbout;
             m_onOpenSettings = onOpenSettings;
@@ -45,8 +46,8 @@ namespace usea.graphics.scene
             // TEMPORARY: For testing tooltips.
             m_view.m_closeProgramButton.SetTooltip("Are you sure you want to end the game?");
 
-            m_view.m_newgameButton.AddOnPointerClickCallback(() => { m_onOpenNewGameMenu(); });
-            m_view.m_newgameButton.AddOnPointerClickCallback(() =>
+            m_view.m_newgameButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onOpenNewGameMenu(); });
+            m_view.m_newgameButton.AddOnPointerClickCallback((PointerEventData eventData) =>
             {
                 // TEMPORARY: This is just for testing.
                 new EngineWrapper(new ExampleTask()).Schedule(() => { print("Task 1 is done"); });
@@ -54,9 +55,9 @@ namespace usea.graphics.scene
                 new EngineWrapper(new ExampleTask()).Schedule(() => { print("Task 3 is done"); });
             });
 
-            m_view.m_settingsButton.AddOnPointerClickCallback(() => { m_onOpenSettings(); });
-            m_view.m_aboutButton.AddOnPointerClickCallback(() => { m_onOpenAbout(); });
-            m_view.m_closeProgramButton.AddOnPointerClickCallback(() => { m_onCloseProgram(); });
+            m_view.m_settingsButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onOpenSettings(); });
+            m_view.m_aboutButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onOpenAbout(); });
+            m_view.m_closeProgramButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onCloseProgram(); });
         }
     }
 }

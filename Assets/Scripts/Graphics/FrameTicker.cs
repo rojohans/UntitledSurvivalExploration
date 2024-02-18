@@ -8,13 +8,13 @@ namespace usea.graphics.controller
     {
         // ###### PUBLIC ######
         public partial void Update();
-        public partial void RegisterCallback(util.types.Callback callback);
+        public partial void RegisterCallback(usea.util.types.Callback callback);
 
         // ###### PROTECTED ######
         protected override void Initialize() { }
 
         // ###### PRIVATE ######
-        private util.types.Callback m_onUpdate;
+        private usea.util.types.Callback m_onUpdate;
     }
 
     public partial class FrameTicker : Controller
@@ -28,7 +28,7 @@ namespace usea.graphics.controller
         /// The registered callback will be invoked each frame.
         /// </summary>
         /// <param name="callback"></param>
-        public partial void RegisterCallback(util.types.Callback callback)
+        public partial void RegisterCallback(usea.util.types.Callback callback)
         {
             m_onUpdate += callback;
         }

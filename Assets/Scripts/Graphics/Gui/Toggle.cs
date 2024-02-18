@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace usea.graphics.gui
 {
@@ -28,8 +29,8 @@ namespace usea.graphics.gui
         };
 
         // ###### PUBLIC ######
-        public partial void SetOnCallback(util.types.Callback callback);
-        public partial void SetOffCallback(util.types.Callback callback);
+        public partial void SetOnCallback(usea.util.types.Callback callback);
+        public partial void SetOffCallback(usea.util.types.Callback callback);
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
@@ -45,19 +46,19 @@ namespace usea.graphics.gui
         [Header("Components")]
         [SerializeField] private UnityEngine.UI.Image m_backgroundImage;
         [SerializeField] private UnityEngine.UI.Image m_centerImage;
-        private event util.types.Callback m_onCallback;
-        private event util.types.Callback m_offCallback;
+        private event usea.util.types.Callback m_onCallback;
+        private event usea.util.types.Callback m_offCallback;
         private ToggleState m_state;
     }
 
     public partial class Toggle : GuiBase
     {
-        public partial void SetOnCallback(util.types.Callback callback)
+        public partial void SetOnCallback(usea.util.types.Callback callback)
         {
             m_onCallback += callback;
         }
 
-        public partial void SetOffCallback(util.types.Callback callback)
+        public partial void SetOffCallback(usea.util.types.Callback callback)
         {
             m_offCallback += callback;
         }
@@ -71,12 +72,12 @@ namespace usea.graphics.gui
 
         private partial void SetInitialCallbacks()
         {
-            Dictionary<ToggleState, util.types.Callback> callbacks = new()
+            Dictionary<ToggleState, usea.util.types.Callback> callbacks = new()
             {
                 {ToggleState.ON_HIGHLIGHT, m_onCallback},
                 {ToggleState.OFF_HIGHLIGHT, m_offCallback}
             };
-            AddOnPointerDownCallback(() =>
+            AddOnPointerDownCallback((PointerEventData eventData) =>
                 {
                     m_state = m_state == ToggleState.ON_HIGHLIGHT
                                 ? ToggleState.OFF_HIGHLIGHT
@@ -84,14 +85,14 @@ namespace usea.graphics.gui
                     callbacks[m_state]?.Invoke();
                     UpdateImageColours();
                 });
-            AddOnPointerEnterCallback(() =>
+            AddOnPointerEnterCallback((PointerEventData eventData) =>
                 {
                     m_state = m_state == ToggleState.ON
                         ? ToggleState.ON_HIGHLIGHT
                         : ToggleState.OFF_HIGHLIGHT;
                     UpdateImageColours();
                 });
-            AddOnPointerExitCallback(() =>
+            AddOnPointerExitCallback((PointerEventData eventData) =>
                 {
                     m_state = m_state == ToggleState.ON_HIGHLIGHT
                         ? ToggleState.ON

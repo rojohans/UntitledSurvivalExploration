@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace usea.graphics.scene
 {
@@ -9,25 +10,25 @@ namespace usea.graphics.scene
     public partial class NewGameMenuScene : controller.Controller
     {
         // ###### PUBLIC ######
-        public partial void SetCallbacks(util.types.Callback onClose,
-                                         util.types.Callback onStartNewGameSession,
-                                         util.types.Callback onOpenSettings);
+        public partial void SetCallbacks(usea.util.types.Callback onClose,
+                                         usea.util.types.Callback onStartNewGameSession,
+                                         usea.util.types.Callback onOpenSettings);
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
 
         // ###### PRIVATE ######
         [SerializeField] private view.NewGameMenuView m_view;
-        private util.types.Callback m_onClose;
-        private util.types.Callback m_onStartNewGameSession;
-        private util.types.Callback m_onOpenSettings;
+        private usea.util.types.Callback m_onClose;
+        private usea.util.types.Callback m_onStartNewGameSession;
+        private usea.util.types.Callback m_onOpenSettings;
     }
 
     public partial class NewGameMenuScene : controller.Controller
     {
-        public partial void SetCallbacks(util.types.Callback onClose,
-                                         util.types.Callback onStartNewGameSession,
-                                         util.types.Callback onOpenSettings)
+        public partial void SetCallbacks(usea.util.types.Callback onClose,
+                                         usea.util.types.Callback onStartNewGameSession,
+                                         usea.util.types.Callback onOpenSettings)
         {
             m_onClose = onClose;
             m_onStartNewGameSession = onStartNewGameSession;
@@ -36,9 +37,9 @@ namespace usea.graphics.scene
 
         protected override partial void Initialize()
         {
-            m_view.m_startGameButton.AddOnPointerClickCallback(() => { m_onStartNewGameSession(); });
-            m_view.m_settingsButton.AddOnPointerClickCallback(() => { m_onOpenSettings(); });
-            m_view.m_backButton.AddOnPointerClickCallback(() => { m_onClose(); });
+            m_view.m_startGameButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onStartNewGameSession(); });
+            m_view.m_settingsButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onOpenSettings(); });
+            m_view.m_backButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onClose(); });
         }
     }
 }

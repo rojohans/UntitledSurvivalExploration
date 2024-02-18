@@ -1,8 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using usea.graphics.controller;
-using System.Security;
+using UnityEngine.EventSystems;
 
 namespace usea.graphics.gui
 {
@@ -33,7 +31,7 @@ namespace usea.graphics.gui
         [SerializeField] private ColourSettings m_textColour;
 
         [Header("Components")]
-        [SerializeField] private Image m_image;
+        [SerializeField] private UnityEngine.UI.Image m_image;
         [SerializeField] private TMP_Text m_text;
         private bool m_isCursorOnThisObject;
     }
@@ -50,24 +48,24 @@ namespace usea.graphics.gui
 
         private partial void SetColourListeners()
         {
-            AddOnPointerEnterCallback(() =>
+            AddOnPointerEnterCallback((PointerEventData eventData) =>
             {
                 m_isCursorOnThisObject = true;
                 m_image.color = m_boxColour.onPointerEnter;
                 m_text.color = m_textColour.onPointerEnter;
             });
-            AddOnPointerExitCallback(() =>
+            AddOnPointerExitCallback((PointerEventData eventData) =>
             {
                 m_isCursorOnThisObject = false;
                 m_image.color = m_boxColour.normal;
                 m_text.color = m_textColour.normal;
             });
-            AddOnPointerDownCallback(() =>
+            AddOnPointerDownCallback((PointerEventData eventData) =>
             {
                 m_image.color = m_boxColour.onPointerClick;
                 m_text.color = m_textColour.onPointerClick;
             });
-            AddOnPointerUpCallback(() =>
+            AddOnPointerUpCallback((PointerEventData eventData) =>
             {
                 m_image.color = m_isCursorOnThisObject ? m_boxColour.onPointerEnter : m_boxColour.normal;
                 m_text.color = m_isCursorOnThisObject ? m_textColour.onPointerEnter : m_textColour.normal;

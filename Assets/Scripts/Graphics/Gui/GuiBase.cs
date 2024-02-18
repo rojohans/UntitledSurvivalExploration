@@ -1,4 +1,6 @@
 
+using UnityEngine.EventSystems;
+
 namespace usea.graphics.gui
 {
     /// <summary>
@@ -31,12 +33,12 @@ namespace usea.graphics.gui
         /// <param name="message"></param>
         public partial void SetTooltip(string message)
         {
-            AddOnPointerEnterCallback(() =>
+            AddOnPointerEnterCallback((PointerEventData eventData) =>
             {
                 m_tooltipController.Activate(message);
             });
 
-            AddOnPointerExitCallback(() =>
+            AddOnPointerExitCallback((PointerEventData eventData) =>
             {
                 m_tooltipController.Deactivate();
             });

@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace usea.graphics.scene
 {
@@ -9,25 +10,25 @@ namespace usea.graphics.scene
     public partial class GameSessionScene : controller.Controller
     {
         // ###### PUBLIC ######
-        public partial void SetCallbacks(util.types.Callback onOpenSettings,
-                                         util.types.Callback onClose,
-                                         util.types.Callback onCloseProgram);
+        public partial void SetCallbacks(usea.util.types.Callback onOpenSettings,
+                                         usea.util.types.Callback onClose,
+                                         usea.util.types.Callback onCloseProgram);
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
 
         // ###### PRIVATE ######
         [SerializeField] private view.GameSessionView m_view;
-        private util.types.Callback m_onOpenSettings;
-        private util.types.Callback m_onClose;
-        private util.types.Callback m_onCloseProgram;
+        private usea.util.types.Callback m_onOpenSettings;
+        private usea.util.types.Callback m_onClose;
+        private usea.util.types.Callback m_onCloseProgram;
     }
 
     public partial class GameSessionScene : controller.Controller
     {
-        public partial void SetCallbacks(util.types.Callback onOpenSettings,
-                                         util.types.Callback onClose,
-                                         util.types.Callback onCloseProgram)
+        public partial void SetCallbacks(usea.util.types.Callback onOpenSettings,
+                                         usea.util.types.Callback onClose,
+                                         usea.util.types.Callback onCloseProgram)
         {
             m_onOpenSettings = onOpenSettings;
             m_onClose = onClose;
@@ -36,9 +37,9 @@ namespace usea.graphics.scene
 
         protected override partial void Initialize()
         {
-            m_view.m_mainMenuButton.AddOnPointerClickCallback(() => { m_onClose(); });
-            m_view.m_settingsButton.AddOnPointerClickCallback(() => { m_onOpenSettings(); });
-            m_view.m_quitProgramButton.AddOnPointerClickCallback(() => { m_onCloseProgram(); });
+            m_view.m_mainMenuButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onClose(); });
+            m_view.m_settingsButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onOpenSettings(); });
+            m_view.m_quitProgramButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onCloseProgram(); });
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace usea.graphics.gui
@@ -6,7 +7,7 @@ namespace usea.graphics.gui
     /// <summary>
     /// Base class for gui objects that should use Unity events.
     /// </summary>
-    public abstract class EventEnabled : MonoBehaviour,
+    public abstract partial class EventEnabled : MonoBehaviour,
                                         IPointerEnterHandler,
                                         IPointerClickHandler,
                                         IPointerExitHandler,
@@ -14,109 +15,127 @@ namespace usea.graphics.gui
                                         IPointerUpHandler,
                                         IPointerMoveHandler
     {
+        // ###### TYPES ######
+        public delegate void EventCallback(PointerEventData eventData);
+
         // ###### PUBLIC ######
+        public partial void AddOnPointerClickCallback(EventCallback callback);
+        public partial void AddOnPointerEnterCallback(EventCallback callback);
+        public partial void AddOnPointerExitCallback(EventCallback callback);
+        public partial void AddOnPointerDownCallback(EventCallback callback);
+        public partial void AddOnPointerUpCallback(EventCallback callback);
+        public partial void AddOnPointerMoveCallback(EventCallback callback);
+        public partial void AddOnUpdateCallback(usea.util.types.Callback callback);
+        public partial void OnPointerClick(PointerEventData eventData);
+        public partial void OnPointerEnter(PointerEventData eventData);
+        public partial void OnPointerExit(PointerEventData eventData);
+        public partial void OnPointerDown(PointerEventData eventData);
+        public partial void OnPointerUp(PointerEventData eventData);
+        public partial void OnPointerMove(PointerEventData eventData);
+        public partial void Update();
 
-        /*
-        public EventEnabled()
-        {  
-            m_callbacks = new Dictionary<EventTypeE, Callback>() {{EventTypeE.ON_POINTER_CLICK, null},
-                                                                  {EventTypeE.ON_POINTER_ENTER, null},
-                                                                  {EventTypeE.ON_POINTER_EXIT, null},
-                                                                  {EventTypeE.ON_POINTER_DOWN, null},
-                                                                  {EventTypeE.ON_POINTER_UP, null}};
+        // ###### PROTECTED ######
+        protected bool m_isSelected;
 
+        // ###### PRIVATE ######
+        private struct Callbacks
+        {
+            public event EventCallback onPointerClick;
+            public event EventCallback onPointerEnter;
+            public event EventCallback onPointerExit;
+            public event EventCallback onPointerDown;
+            public event EventCallback onPointerUp;
+            public event EventCallback onPointerMove;
+            public event usea.util.types.Callback onUpdate;
+            public void OnPointerClick(PointerEventData eventData) { onPointerClick?.Invoke(eventData); }
+            public void OnPointerEnter(PointerEventData eventData) { onPointerEnter?.Invoke(eventData); }
+            public void OnPointerExit(PointerEventData eventData) { onPointerExit?.Invoke(eventData); }
+            public void OnPointerDown(PointerEventData eventData) { onPointerDown?.Invoke(eventData); }
+            public void OnPointerUp(PointerEventData eventData) { onPointerUp?.Invoke(eventData); }
+            public void OnPointerMove(PointerEventData eventData) { onPointerMove?.Invoke(eventData); }
+            public void OnUpdate() { onUpdate?.Invoke(); }
         }
-        */
+        private Callbacks m_callbacks = new Callbacks();
+    }
 
-
-        public void AddOnPointerClickCallback(util.types.Callback callback)
+    public abstract partial class EventEnabled : MonoBehaviour,
+                                        IPointerEnterHandler,
+                                        IPointerClickHandler,
+                                        IPointerExitHandler,
+                                        IPointerDownHandler,
+                                        IPointerUpHandler,
+                                        IPointerMoveHandler
+    {
+        public partial void AddOnPointerClickCallback(EventCallback callback)
         {
             m_callbacks.onPointerClick += callback;
         }
 
-        public void AddOnPointerEnterCallback(util.types.Callback callback)
+        public partial void AddOnPointerEnterCallback(EventCallback callback)
         {
             m_callbacks.onPointerEnter += callback;
         }
 
-        public void AddOnPointerExitCallback(util.types.Callback callback)
+        public partial void AddOnPointerExitCallback(EventCallback callback)
         {
             m_callbacks.onPointerExit += callback;
         }
 
-        public void AddOnPointerDownCallback(util.types.Callback callback)
+        public partial void AddOnPointerDownCallback(EventCallback callback)
         {
             m_callbacks.onPointerDown += callback;
         }
 
-        public void AddOnPointerUpCallback(util.types.Callback callback)
+        public partial void AddOnPointerUpCallback(EventCallback callback)
         {
             m_callbacks.onPointerUp += callback;
         }
 
-        public void AddOnPointerMoveCallback(util.types.Callback callback)
+        public partial void AddOnPointerMoveCallback(EventCallback callback)
         {
             m_callbacks.onPointerMove += callback;
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        public partial void AddOnUpdateCallback(usea.util.types.Callback callback)
         {
-            m_callbacks.OnPointerClick();
+            m_callbacks.onUpdate += callback;
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public partial void OnPointerClick(PointerEventData eventData)
         {
-            m_callbacks.OnPointerEnter();
+            m_callbacks.OnPointerClick(eventData);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public partial void OnPointerEnter(PointerEventData eventData)
         {
-            m_callbacks.OnPointerExit();
+            m_callbacks.OnPointerEnter(eventData);
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public partial void OnPointerExit(PointerEventData eventData)
         {
-            m_callbacks.OnPointerDown();
+            m_callbacks.OnPointerExit(eventData);
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        public partial void OnPointerDown(PointerEventData eventData)
         {
-            m_callbacks.OnPointerUp();
+            m_isSelected = true;
+            m_callbacks.OnPointerDown(eventData);
         }
 
-        public void OnPointerMove(PointerEventData eventData)
+        public partial void OnPointerUp(PointerEventData eventData)
         {
-            m_callbacks.OnPointerMove();
+            m_isSelected = false;
+            m_callbacks.OnPointerUp(eventData);
         }
 
-        // ###### PRIVATE ######
-        /*
-        private enum EventTypeE
+        public partial void OnPointerMove(PointerEventData eventData)
         {
-            ON_POINTER_CLICK,
-            ON_POINTER_ENTER,
-            ON_POINTER_EXIT,
-            ON_POINTER_DOWN,
-            ON_POINTER_UP
+            m_callbacks.OnPointerMove(eventData);
         }
-        private Dictionary<EventTypeE, Callback> m_callbacks;
-        */
 
-        private struct Callbacks
+        public partial void Update()
         {
-            public event util.types.Callback onPointerClick;
-            public event util.types.Callback onPointerEnter;
-            public event util.types.Callback onPointerExit;
-            public event util.types.Callback onPointerDown;
-            public event util.types.Callback onPointerUp;
-            public event util.types.Callback onPointerMove;
-            public void OnPointerClick() { onPointerClick?.Invoke(); }
-            public void OnPointerEnter() { onPointerEnter?.Invoke(); }
-            public void OnPointerExit() { onPointerExit?.Invoke(); }
-            public void OnPointerDown() { onPointerDown?.Invoke(); }
-            public void OnPointerUp() { onPointerUp?.Invoke(); }
-            public void OnPointerMove() { onPointerMove?.Invoke(); }
+            m_callbacks.OnUpdate();
         }
-        private Callbacks m_callbacks = new Callbacks();
     }
 }
