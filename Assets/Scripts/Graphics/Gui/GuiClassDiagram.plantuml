@@ -1,0 +1,147 @@
+@startuml Custom_Gui_Class_Hierarchy
+
+title Custom gui class hierarchy\nUpdated 2024-02-18
+
+'######################## OBJECTS ########################
+rectangle UnityEngine.EventSystems{
+    interface IPointerEnterHandler{
+        + onPointerEnter() : void <b>Virtual
+    }
+    interface IPointerClickHandler{
+        + onPointerClick() : void <b>Virtual
+    }
+    interface IPointerExitHandler{
+        + onPointerExit() : void <b>Virtual
+    }
+    interface IPointerDownHandler{
+        + onPointerDown() : void <b>Virtual
+    }
+    interface IPointerUpHandler{
+        + onPointerUp() : void <b>Virtual
+    }   
+}
+
+class "<b><<UnityEngine>>\nMonobehaviour" as Monobehaviour
+class  "<b><<UnityEngine.UI>>\nImage" as Image
+class  "<b><<UnityEngine.UI>>\nText" as Text
+
+rectangle Custom{
+    abstract class EventEnabled{
+        + onPointerEnter() : void <b>Override
+        + onPointerClick() : void <b>Override
+        + onPointerExit() : void <b>Override
+        + onPointerDown() : void <b>Override
+        + onPointerUp() : void <b>Override
+        + AddOnPointerEnterCallback(Callback) : void
+        + AddOnPointerClickCallback(Callback) : void
+        + AddOnPointerExitCallback(Callback) : void
+        + AddOnPointerDownCallback(Callback) : void
+        + AddOnPointerUpCallback(Callback) : void
+        - m_callbacks : Callbacks
+    }
+
+    struct Callbacks{
+        + onPointerEnter : Callback
+        + onPointerClick : Callback
+        + onPointerExit : Callback
+        + onPointerDown : Callback
+        + onPointerUp : Callback
+    }
+
+    class Callback << (F,Cyan) >>{
+        Function<void()>
+    }
+
+    abstract class GuiBase{
+        + SetTooltip(string) : void
+        + PlaySound() : void <b><color:#red><<TO BE ADDED>>
+        # Initialize() : void <b>Virtual
+        - m_tooltipController : TooltipController
+        - m_soundController : SoundController <b><color:#red><<TO BE ADDED>>
+    }
+
+    abstract class Controller{
+        # Initialize() : void <b>Virtual
+    } 
+
+    class TooltipController{
+        + Activate(string) : void
+        + Deactivate() : void
+    }
+
+    class "<b><color:#red><<TO BE ADDED>>\nSoundController" as SoundController{
+        + PlaySound() : void
+    }
+
+    class Button{
+        # Initialize() : void <b>Override
+        - SetColourListeners() : void
+        - m_isCursorOnObect : bool
+        - m_image : Image
+        - m_text : Text
+    }
+
+    enum ToogleState{
+        ON
+        OFF
+        ON_HIGHLIGHT
+        OFF_HIGHLIGHT
+    }
+
+    class Toggle{
+        + SetOnCallback(Callback) : void
+        + SetOffCallback(Callback) : void
+        # Initialize() : void <b>Override
+        - SetInitialCallbacks() : void
+        - UpdateImageColours() : void
+        - m_onCallback : Callback
+        - m_offCallback : Callback
+        - m_state : ToggleState
+        - m_backgroundImage : Image
+        - m_centerImage : Image
+    }
+
+    class "Image" as CustomImage{
+        # Initialize() : void <b>Override
+        - SetColourListeners() : void
+        - m_image : Image
+    }
+}
+
+'skinparam groupInheritance 2
+hide empty fields
+hide empty methods
+
+'######################## CONNECTIONS ########################
+
+Controller -r-|> Monobehaviour
+
+EventEnabled -r-|> Monobehaviour
+EventEnabled -u-|> IPointerEnterHandler
+EventEnabled -u-|> IPointerClickHandler
+EventEnabled -u-|> IPointerExitHandler
+EventEnabled -u-|> IPointerDownHandler
+EventEnabled -u-|> IPointerUpHandler
+EventEnabled "1" *-l-> "1" Callbacks
+Callbacks "1" -l- "{1,5}" Callback
+
+GuiBase -u-|> EventEnabled
+GuiBase o-r-> TooltipController
+GuiBase o-r-> SoundController
+
+SoundController -d[hidden]- TooltipController
+SoundController -r-|> Controller
+TooltipController -r-|> Controller
+
+Toggle -u-|> GuiBase
+Toggle -l- ToogleState
+Toggle "1" *-d-> "2" Image
+
+CustomImage -u-|> GuiBase
+CustomImage "1" *-d-> "1" Image
+
+Button -u-|> GuiBase
+Button "1" *-d-> "1" Image
+Button "1" *-d-> "1" Text
+
+@enduml

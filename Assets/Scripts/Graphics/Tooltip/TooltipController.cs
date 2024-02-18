@@ -13,8 +13,6 @@ namespace usea.graphics.controller
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
-        protected override partial void Show();
-        protected override partial void Hide();
 
         // ###### PRIVATE ######
         [UnityEngine.SerializeField] private view.TooltipView m_view;
@@ -41,14 +39,6 @@ namespace usea.graphics.controller
         protected override partial void Initialize()
         {
             Deactivate();
-        }
-
-        protected override partial void Show()
-        {
-        }
-
-        protected override partial void Hide()
-        {
         }
     }
 }

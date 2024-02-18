@@ -12,8 +12,6 @@ namespace usea.graphics.controller
 
         // ###### PROTECTED ######
         protected override void Initialize() { }
-        protected override void Show() { }
-        protected override void Hide() { }
 
         // ###### PRIVATE ######
         private util.types.Callback m_onUpdate;

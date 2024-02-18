@@ -9,16 +9,13 @@ namespace usea.graphics.controller
     public abstract partial class Controller : MonoBehaviour
     {
         // ###### PUBLIC ######
-        public partial void OnEnable();
-        public partial void OnDisable();
+        public partial void Awake();
 
         // ###### PROTECTED ######
         /// <summary>
         /// Used for settings callbacks for all owned gui objects.
         /// </summary>
         protected abstract void Initialize();
-        protected abstract void Show(); // QUESTION: Is this really needed?
-        protected abstract void Hide(); // QUESTION: Is this really needed?
 
         // ###### PRIVATE ######
         private bool m_isInitialized;
@@ -27,21 +24,10 @@ namespace usea.graphics.controller
 
     public abstract partial class Controller
     {
-        public partial void OnEnable()
+        public partial void Awake()
         {
-            if (!m_isInitialized)
-            {
-                m_isInitialized = true;
-                Initialize();
-                GuiManager.Get().RegisterObject(m_name, this);
-            }
-
-            Show();
-        }
-
-        public partial void OnDisable()
-        {
-            Hide();
+            Initialize();
+            GuiManager.Get().RegisterObject(m_name, this);
         }
     }
 }

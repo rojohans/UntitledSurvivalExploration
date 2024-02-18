@@ -1,5 +1,4 @@
 
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace usea.graphics.scene
@@ -9,12 +8,8 @@ namespace usea.graphics.scene
     /// </summary>
     public partial class SceneManager : controller.Controller
     {
-        // ###### PROTECTED ######
-        protected override partial void Initialize();
-        protected override void Show() { }
-        protected override void Hide() { }
-
         // ###### PRIVATE ######
+        protected override partial void Initialize();
         private partial void SwitchScene(MonoBehaviour newScene);
         private partial void OpenAbout();
         private partial void CloseAbout();

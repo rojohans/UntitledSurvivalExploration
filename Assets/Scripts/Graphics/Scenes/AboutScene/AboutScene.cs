@@ -13,8 +13,6 @@ namespace usea.graphics.scene
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
-        protected override void Show() { }
-        protected override void Hide() { }
 
         // ###### PRIVATE ######
         [SerializeField] private view.AboutSceneView m_view;

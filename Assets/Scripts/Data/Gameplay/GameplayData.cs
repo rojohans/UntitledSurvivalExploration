@@ -30,6 +30,9 @@ namespace usea.data.gameplay
 
         private partial void InitializeEventCards()
         {
+
+            // NOTE: https://discord.gg/qaM4XcNUBG
+
             m_eventCards = new Dictionary<uint, EventCard>();
 
             EventCard.InsertInDictionary(ref m_eventCards,
@@ -42,7 +45,7 @@ namespace usea.data.gameplay
                                          "Abandoned tools",
                                          2,
                                          "abandonedTools.png",
-                                         "This will surely prove useful.\nBut why were the abandoned?");
+                                         "This will surely prove useful.\nBut why were they abandoned?");
 
             EventCard.InsertInDictionary(ref m_eventCards,
                                          "Poachers",

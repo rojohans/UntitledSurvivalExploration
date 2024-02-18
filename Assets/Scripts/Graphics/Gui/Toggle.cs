@@ -1,15 +1,13 @@
 
-
 using System.Collections.Generic;
 using UnityEngine;
-using usea.graphics.controller;
 
 namespace usea.graphics.gui
 {
     /// <summary>
     /// A custom implementation of a toggle button. Can be either on or off.
     /// </summary>
-    public partial class Toggle : EventEnabled
+    public partial class Toggle : GuiBase
     {
         // ###### TYPES ######
         [System.Serializable]
@@ -30,10 +28,11 @@ namespace usea.graphics.gui
         };
 
         // ###### PUBLIC ######
-        public partial void Awake();
         public partial void SetOnCallback(util.types.Callback callback);
         public partial void SetOffCallback(util.types.Callback callback);
-        public partial void SetTooltip(string message);
+
+        // ###### PROTECTED ######
+        protected override partial void Initialize();
 
         // ###### PRIVATE ######
         private partial void SetInitialCallbacks();
@@ -51,15 +50,8 @@ namespace usea.graphics.gui
         private ToggleState m_state;
     }
 
-    public partial class Toggle : EventEnabled
+    public partial class Toggle : GuiBase
     {
-        public partial void Awake()
-        {
-            m_state = ToggleState.OFF;
-            SetInitialCallbacks();
-            UpdateImageColours();
-        }
-
         public partial void SetOnCallback(util.types.Callback callback)
         {
             m_onCallback += callback;
@@ -70,19 +62,11 @@ namespace usea.graphics.gui
             m_offCallback += callback;
         }
 
-        public partial void SetTooltip(string message)
+        protected override partial void Initialize()
         {
-            AddOnPointerEnterCallback(() =>
-            {
-                TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
-                a.Activate(message);
-            });
-
-            AddOnPointerExitCallback(() =>
-            {
-                TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
-                a.Deactivate();
-            });
+            m_state = ToggleState.OFF;
+            SetInitialCallbacks();
+            UpdateImageColours();
         }
 
         private partial void SetInitialCallbacks()

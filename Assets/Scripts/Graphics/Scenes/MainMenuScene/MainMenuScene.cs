@@ -18,8 +18,6 @@ namespace usea.graphics.scene
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
-        protected override void Show() { }
-        protected override void Hide() { }
 
         // ###### PRIVATE ######
         [SerializeField] private view.MainMenuView m_view;
@@ -44,6 +42,9 @@ namespace usea.graphics.scene
 
         protected override partial void Initialize()
         {
+            // TEMPORARY: For testing tooltips.
+            m_view.m_closeProgramButton.SetTooltip("Are you sure you want to end the game?");
+
             m_view.m_newgameButton.AddOnPointerClickCallback(() => { m_onOpenNewGameMenu(); });
             m_view.m_newgameButton.AddOnPointerClickCallback(() =>
             {

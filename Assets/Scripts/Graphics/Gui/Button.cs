@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using usea.graphics.controller;
+using System.Security;
 
 namespace usea.graphics.gui
 {
@@ -11,14 +12,9 @@ namespace usea.graphics.gui
     /// @TODO: SetSoundListener functionality
     /// @TODO: SetImage functionality
     /// </summary>
-    public partial class Button : EventEnabled
+    public partial class Button : GuiBase
     {
-        // ###### PUBLIC ######
-        public partial void Awake();
-        public partial void SetTooltip(string message);
-
-        // ###### PRIVATE ######
-        private partial void SetColourListeners();
+        // ###### TYPES ######
         [System.Serializable]
         private struct ColourSettings
         {
@@ -27,6 +23,11 @@ namespace usea.graphics.gui
             public Color onPointerClick;
         };
 
+        // ###### PROTECTED ######
+        protected override partial void Initialize();
+
+        // ###### PRIVATE ######
+        private partial void SetColourListeners();
         [Header("Colour")]
         [SerializeField] private ColourSettings m_boxColour;
         [SerializeField] private ColourSettings m_textColour;
@@ -37,29 +38,14 @@ namespace usea.graphics.gui
         private bool m_isCursorOnThisObject;
     }
 
-    public partial class Button : EventEnabled
+    public partial class Button : GuiBase
     {
-        public partial void Awake()
+        protected override partial void Initialize()
         {
             m_isCursorOnThisObject = false;
             //SetSoundListeners();
             //SetTooltipListeners();
             SetColourListeners();
-        }
-
-        public partial void SetTooltip(string message)
-        {
-            AddOnPointerEnterCallback(() =>
-            {
-                TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
-                a.Activate(message);
-            });
-
-            AddOnPointerExitCallback(() =>
-            {
-                TooltipController a = (TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
-                a.Deactivate();
-            });
         }
 
         private partial void SetColourListeners()

@@ -15,8 +15,6 @@ namespace usea.graphics.controller
 
         // ###### PROTECTED ######
         protected override partial void Initialize();
-        protected override partial void Show();
-        protected override partial void Hide();
 
         // ###### PRIVATE ######
         private partial void OnButtonPress();
@@ -41,16 +39,6 @@ namespace usea.graphics.controller
             m_view.m_toggle.SetOffCallback(() => { m_model.SetChargeIncrement(1); });
             //m_view.m_toggle.SetTooltip("On: Increment=3\nOff: Increment=1");
             m_view.m_slider.value = m_model.GetChargeRate();
-        }
-
-        protected override partial void Show()
-        {
-            print("Show");
-        }
-
-        protected override partial void Hide()
-        {
-            print("Hide");
         }
 
         private partial void OnButtonPress()
