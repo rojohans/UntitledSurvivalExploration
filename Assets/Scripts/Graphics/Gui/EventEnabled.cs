@@ -33,9 +33,12 @@ namespace usea.graphics.gui
         public partial void OnPointerUp(PointerEventData eventData);
         public partial void OnPointerMove(PointerEventData eventData);
         public partial void Update();
+        public bool IsSelected() { return m_isSelected; }
+        public bool IsCursorOnThisObject() { return m_isCursorOnThisObject; }
 
         // ###### PROTECTED ######
         protected bool m_isSelected;
+        protected bool m_isCursorOnThisObject;
 
         // ###### PRIVATE ######
         private struct Callbacks
@@ -108,11 +111,13 @@ namespace usea.graphics.gui
 
         public partial void OnPointerEnter(PointerEventData eventData)
         {
+            m_isCursorOnThisObject = true;
             m_callbacks.OnPointerEnter(eventData);
         }
 
         public partial void OnPointerExit(PointerEventData eventData)
         {
+            m_isCursorOnThisObject = false;
             m_callbacks.OnPointerExit(eventData);
         }
 

@@ -11,7 +11,8 @@ namespace usea.graphics
     {
         NONE,
         TOOLTIP,
-        FRAME_TICKER
+        FRAME_TICKER,
+        EVENT_CARD_POOL_MANAGER
     };
 
     /// <summary>

@@ -1,6 +1,8 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using usea.graphics.controller;
 
 namespace usea.graphics.scene
 {
@@ -22,6 +24,8 @@ namespace usea.graphics.scene
         private usea.util.types.Callback m_onOpenSettings;
         private usea.util.types.Callback m_onClose;
         private usea.util.types.Callback m_onCloseProgram;
+
+        private List<uint> m_cardIds;
     }
 
     public partial class GameSessionScene : controller.Controller
@@ -37,9 +41,32 @@ namespace usea.graphics.scene
 
         protected override partial void Initialize()
         {
+            m_cardIds = new List<uint>();
+
             m_view.m_mainMenuButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onClose(); });
             m_view.m_settingsButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onOpenSettings(); });
             m_view.m_quitProgramButton.AddOnPointerClickCallback((PointerEventData eventData) => { m_onCloseProgram(); });
+
+
+            m_view.m_newCardButton.AddOnPointerClickCallback((PointerEventData eventData) =>
+            {
+                EventCardPoolManager a = (EventCardPoolManager)GuiManager.Get().GetObject(GuiObjectTypeE.EVENT_CARD_POOL_MANAGER);
+                m_cardIds.Add(a.VisualizeCard());
+            });
+
+            m_view.m_destroyCardButton.AddOnPointerClickCallback((PointerEventData eventData) =>
+            {
+                if (m_cardIds.Count == 0)
+                {
+                    return;
+                }
+
+                EventCardPoolManager a = (EventCardPoolManager)GuiManager.Get().GetObject(GuiObjectTypeE.EVENT_CARD_POOL_MANAGER);
+                uint idToDestroy = m_cardIds[Random.Range(0, m_cardIds.Count)];
+
+                a.DevisualizeCard(idToDestroy);
+                m_cardIds.Remove(idToDestroy);
+            });
         }
     }
 }

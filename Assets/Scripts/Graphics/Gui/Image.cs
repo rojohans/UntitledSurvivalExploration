@@ -4,6 +4,9 @@ using UnityEngine.EventSystems;
 
 namespace usea.graphics.gui
 {
+    /// <summary>
+    /// Custom Gui image. Handles colour transitions on mouse events. Can optionally be draggable.
+    /// </summary>
     public partial class Image : GuiBase
     {
         // ###### TYPES ######
@@ -15,14 +18,25 @@ namespace usea.graphics.gui
             public Color click;
         };
 
+        public enum ColourMode
+        {
+            NORMAL,
+            HOVER,
+            CLICK
+        }
+
+        // ###### PUBLIC ######
+        public partial void ChangeColour(ColourMode colourMode);
+        public partial void ChangeSprite(Sprite sprite);
+
         // ###### PROTECTED ######
         protected override partial void Initialize();
 
         // ###### PRIVATE ######
         private partial void SetColourListeners();
-        private partial void InitializeMouseDragging();
         [Header("Colour")]
         [SerializeField] private ColourSettings m_boxColour;
+        [SerializeField] private bool m_isDraggable = false;
 
         private util.ObjectDragger m_objectDragger;
         private UnityEngine.UI.Image m_image;
@@ -31,13 +45,39 @@ namespace usea.graphics.gui
 
     public partial class Image : GuiBase
     {
+        public partial void ChangeColour(ColourMode colourMode)
+        {
+            switch (colourMode)
+            {
+                case ColourMode.NORMAL:
+                    m_image.color = m_boxColour.normal;
+                    break;
+                case ColourMode.HOVER:
+                    m_image.color = m_boxColour.hover;
+                    break;
+                case ColourMode.CLICK:
+                    m_image.color = m_boxColour.click;
+                    break;
+            }
+        }
+
+        public partial void ChangeSprite(Sprite sprite)
+        {
+            m_image.sprite = sprite;
+        }
+
         protected override partial void Initialize()
         {
             m_isCursorOnThisObject = false;
             m_image = GetComponent<UnityEngine.UI.Image>();
 
+            if (m_isDraggable)
+            {
+                m_objectDragger = gameObject.AddComponent<util.ObjectDragger>();
+                m_objectDragger.Initialize(this, transform.parent.GetComponent<Transform>());
+            }
+
             SetColourListeners();
-            InitializeMouseDragging();
         }
 
         private partial void SetColourListeners()
@@ -47,7 +87,7 @@ namespace usea.graphics.gui
                 if (m_isSelected) { return; } // Needed when dragging
 
                 m_isCursorOnThisObject = true;
-                m_image.color = m_boxColour.hover;
+                ChangeColour(ColourMode.HOVER);
             });
 
             AddOnPointerExitCallback((PointerEventData eventData) =>
@@ -55,33 +95,18 @@ namespace usea.graphics.gui
                 if (m_isSelected) { return; } // Needed when dragging
 
                 m_isCursorOnThisObject = false;
-                m_image.color = m_boxColour.normal;
+                ChangeColour(ColourMode.NORMAL);
 
             });
-            AddOnPointerDownCallback((PointerEventData eventData) =>
-            {
-                m_image.color = m_boxColour.click;
-            });
-            AddOnPointerUpCallback((PointerEventData eventData) =>
-            {
-                m_image.color = m_isCursorOnThisObject ? m_boxColour.hover : m_boxColour.normal;
-            });
-        }
-
-        private partial void InitializeMouseDragging()
-        {
-            m_objectDragger = gameObject.AddComponent<util.ObjectDragger>();
-            m_objectDragger.SetTranformToActOn(transform.parent.GetComponent<Transform>());
 
             AddOnPointerDownCallback((PointerEventData eventData) =>
             {
-                m_objectDragger.SetCurrentMousePosition(Input.mousePosition);
-                m_objectDragger.Activate();
+                ChangeColour(ColourMode.CLICK);
             });
 
             AddOnPointerUpCallback((PointerEventData eventData) =>
             {
-                m_objectDragger.Deactivate();
+                ChangeColour(m_isCursorOnThisObject ? ColourMode.HOVER : ColourMode.NORMAL);
             });
         }
     }

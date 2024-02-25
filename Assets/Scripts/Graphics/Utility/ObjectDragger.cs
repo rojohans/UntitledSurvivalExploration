@@ -1,5 +1,7 @@
 
 using UnityEngine;
+using UnityEngine.EventSystems;
+using usea.graphics.gui;
 
 namespace usea.graphics.util
 {
@@ -10,13 +12,12 @@ namespace usea.graphics.util
     {
         // ###### PUBLIC ######
         public partial void Update();
-        public partial void SetCurrentMousePosition(Vector3 currentMousePosition);
-        public partial void SetTranformToActOn(Transform transform);
-        public partial void Activate();
-        public partial void Deactivate();
-
+        public partial void Initialize(GuiBase user, Transform transform);
 
         // ###### PRIVATE ######
+        private partial void SetCurrentMousePosition(Vector3 currentMousePosition);
+        private partial void Activate();
+        private partial void Deactivate();
         private Transform m_tranformToActOn;
         private Vector3 m_previousFrameMousePosition;
         private bool m_isActive;
@@ -44,28 +45,38 @@ namespace usea.graphics.util
             m_previousFrameMousePosition = currentMousePosition;
         }
 
-        public partial void SetTranformToActOn(Transform transform)
+        /// <summary>
+        /// Sets the transform to update, and adds mouse event callbacks for the user.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="transform"></param>
+        public partial void Initialize(GuiBase user, Transform transform)
         {
             m_tranformToActOn = transform;
+
+            user.AddOnPointerDownCallback((PointerEventData eventData) =>
+            {
+                SetCurrentMousePosition(Input.mousePosition);
+                Activate();
+            });
+
+            user.AddOnPointerUpCallback((PointerEventData eventData) =>
+            {
+                Deactivate();
+            });
         }
 
-        public partial void SetCurrentMousePosition(Vector3 currentMousePosition)
+        private partial void SetCurrentMousePosition(Vector3 currentMousePosition)
         {
             m_previousFrameMousePosition = currentMousePosition;
         }
 
-        /// <summary>
-        /// Will start to move the attached object along with the mouse.
-        /// </summary>
-        public partial void Activate()
+        private partial void Activate()
         {
             m_isActive = true;
         }
 
-        /// <summary>
-        /// Will stop moving the attached object.
-        /// </summary>
-        public partial void Deactivate()
+        private partial void Deactivate()
         {
             m_isActive = false;
         }
