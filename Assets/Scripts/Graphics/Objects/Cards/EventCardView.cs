@@ -11,6 +11,7 @@ namespace usea.graphics.view
         public partial void ResetAppearance(string title, string description, uint priority, Sprite image);
         public partial gui.Image GetArt();
         public partial gui.GuiBase GetMouseEventCatcher();
+        public partial void SetScale(float newScale);
 
         // ###### PRIVATE ######
         [Header("Components")]
@@ -41,5 +42,15 @@ namespace usea.graphics.view
         {
             return m_dragger;
         }
+
+        /// <summary>
+        /// New scale must be positive number
+        /// </summary>
+        /// <param name="newScale"></param>
+        public partial void SetScale(float newScale)
+        {
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+        }
+
     }
 }

@@ -12,7 +12,8 @@ namespace usea.graphics
         NONE,
         TOOLTIP,
         FRAME_TICKER,
-        EVENT_CARD_POOL_MANAGER
+        EVENT_CARD_POOL_MANAGER,
+        SELECTED_CARD_HOLDER
     };
 
     /// <summary>
