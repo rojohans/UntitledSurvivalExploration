@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Scripting;
 
 namespace usea.graphics.gui
 {
@@ -30,7 +31,8 @@ namespace usea.graphics.gui
         public partial void ChangeSprite(Sprite sprite);
 
         // ###### PROTECTED ######
-        protected override partial void Initialize();
+        protected override partial void Constructor();
+        protected override void InitializeDependencies() { }
 
         // ###### PRIVATE ######
         private partial void SetColourListeners();
@@ -66,7 +68,7 @@ namespace usea.graphics.gui
             m_image.sprite = sprite;
         }
 
-        protected override partial void Initialize()
+        protected override partial void Constructor()
         {
             m_isCursorOnThisObject = false;
             m_image = GetComponent<UnityEngine.UI.Image>();

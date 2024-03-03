@@ -9,11 +9,13 @@ namespace usea.graphics.gui
     public abstract partial class GuiBase : EventEnabled
     {
         //###### PUBLIC ######
+        public partial void Awake();
         public partial void Start();
         public partial void SetTooltip(string message);
 
         //###### PROTECTED ######
-        protected abstract void Initialize();
+        protected abstract void Constructor();
+        protected abstract void InitializeDependencies();
 
         //###### PRIVATE ######
         private controller.TooltipController m_tooltipController;
@@ -21,10 +23,16 @@ namespace usea.graphics.gui
 
     public abstract partial class GuiBase : EventEnabled
     {
+
+        public partial void Awake()
+        {
+            Constructor();
+        }
+
         public partial void Start()
         {
             m_tooltipController = (controller.TooltipController)GuiManager.Get().GetObject(GuiObjectTypeE.TOOLTIP);
-            Initialize();
+            InitializeDependencies();
         }
 
         /// <summary>

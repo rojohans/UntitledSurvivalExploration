@@ -22,7 +22,8 @@ namespace usea.graphics.gui
         };
 
         // ###### PROTECTED ######
-        protected override partial void Initialize();
+        protected override partial void Constructor();
+        protected override void InitializeDependencies() { }
 
         // ###### PRIVATE ######
         private partial void SetColourListeners();
@@ -38,7 +39,7 @@ namespace usea.graphics.gui
 
     public partial class Button : GuiBase
     {
-        protected override partial void Initialize()
+        protected override partial void Constructor()
         {
             m_isCursorOnThisObject = false;
             //SetSoundListeners();

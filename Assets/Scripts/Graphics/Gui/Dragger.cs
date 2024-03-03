@@ -7,7 +7,8 @@ namespace usea.graphics.gui
     public partial class Dragger : GuiBase
     {
         // ###### PROTECTED ######
-        protected override partial void Initialize();
+        protected override partial void Constructor();
+        protected override void InitializeDependencies() { }
 
         // ###### PRIVATE ######
         private util.ObjectDragger m_objectDragger;
@@ -15,7 +16,7 @@ namespace usea.graphics.gui
 
     public partial class Dragger : GuiBase
     {
-        protected override partial void Initialize()
+        protected override partial void Constructor()
         {
             m_objectDragger = gameObject.AddComponent<util.ObjectDragger>();
             m_objectDragger.Initialize(this, transform.parent.GetComponent<UnityEngine.Transform>());

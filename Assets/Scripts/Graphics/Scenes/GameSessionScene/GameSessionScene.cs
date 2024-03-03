@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using usea.data.gameplay;
 using usea.graphics.controller;
 
 namespace usea.graphics.scene
@@ -50,8 +51,10 @@ namespace usea.graphics.scene
 
             m_view.m_newCardButton.AddOnPointerClickCallback((PointerEventData eventData) =>
             {
+                Dictionary<uint, EventCardTemplate> eventCards = data.Database.Get().GetGameplayData().getEventCardtemplates();
+
                 EventCardPoolManager a = (EventCardPoolManager)GuiManager.Get().GetObject(GuiObjectTypeE.EVENT_CARD_POOL_MANAGER);
-                m_cardIds.Add(a.VisualizeCard());
+                m_cardIds.Add(a.VisualizeCard(eventCards[(uint)Random.Range(0, eventCards.Count)].GetProperties())); // TEMPORARY: Using randomness is just for testing.
             });
 
             m_view.m_destroyCardButton.AddOnPointerClickCallback((PointerEventData eventData) =>

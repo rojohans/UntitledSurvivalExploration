@@ -1,7 +1,7 @@
 
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using usea.data.gameplay;
 
 namespace usea.graphics.controller
 {
@@ -11,6 +11,7 @@ namespace usea.graphics.controller
     public partial class EventCardController : Controller
     {
         // ###### PUBLIC ######
+        public partial void ResetAppearance(EventCardProperties template);
         public uint GetId() { return m_id; }
         public partial void Show();
         public partial void Hide();
@@ -38,6 +39,15 @@ namespace usea.graphics.controller
 
     public partial class EventCardController : Controller
     {
+        /// <summary>
+        /// Updates the visual aspect of the card.
+        /// </summary>
+        /// <param name="template"></param>
+        public partial void ResetAppearance(EventCardProperties template)
+        {
+            m_view.ResetAppearance(template.title, template.description, template.priority, template.image);
+        }
+
         public partial void Show()
         {
             gameObject.SetActive(true);

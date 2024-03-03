@@ -33,7 +33,8 @@ namespace usea.graphics.gui
         public partial void SetOffCallback(usea.util.types.Callback callback);
 
         // ###### PROTECTED ######
-        protected override partial void Initialize();
+        protected override partial void Constructor();
+        protected override void InitializeDependencies() { }
 
         // ###### PRIVATE ######
         private partial void SetInitialCallbacks();
@@ -63,7 +64,7 @@ namespace usea.graphics.gui
             m_offCallback += callback;
         }
 
-        protected override partial void Initialize()
+        protected override partial void Constructor()
         {
             m_state = ToggleState.OFF;
             SetInitialCallbacks();

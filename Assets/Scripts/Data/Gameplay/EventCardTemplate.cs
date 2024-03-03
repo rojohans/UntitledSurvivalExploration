@@ -1,6 +1,5 @@
 
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace usea.data.gameplay
 {
@@ -9,31 +8,31 @@ namespace usea.data.gameplay
     /// </summary>
     public struct EventCardProperties
     {
-        public EventCardProperties(string titleIn, uint priorityIn, string imageNameIn, string descriptionIn)
+        public EventCardProperties(string titleIn, uint priorityIn, UnityEngine.Sprite imageIn, string descriptionIn)
         {
             title = titleIn;
             priority = priorityIn;
-            imageName = imageNameIn;
+            image = imageIn;
             description = descriptionIn;
         }
 
         public string title;
         public uint priority;
-        public string imageName;
+        public UnityEngine.Sprite image;
         public string description;
     }
 
     /// <summary>
     /// A container for a unique card. Each instance will have a unique ID.
     /// </summary>
-    public partial class EventCard
+    public partial class EventCardTemplate
     {
         // ###### PUBLIC ######
         public partial string GetName();
         public partial uint GetId();
         public partial EventCardProperties GetProperties();
         public static partial void ResetIdGenerator();
-        public static partial void InsertInDictionary(ref Dictionary<uint, EventCard> dictionary, string title, uint priority, string imageName, string description);
+        public static partial void InsertInDictionary(ref Dictionary<uint, EventCardTemplate> dictionary, string title, uint priority, string imageName, string description);
 
         // ###### PRIVATE ######
         private static util.UniqueIdGenerator m_idGenerator = new util.UniqueIdGenerator();
@@ -41,9 +40,9 @@ namespace usea.data.gameplay
         private EventCardProperties m_properties;
     }
 
-    public partial class EventCard
+    public partial class EventCardTemplate
     {
-        public EventCard(EventCardProperties properties)
+        public EventCardTemplate(EventCardProperties properties)
         {
             m_id = m_idGenerator.GenerateId();
             m_properties = properties;
@@ -77,13 +76,15 @@ namespace usea.data.gameplay
         /// <param name="priority"></param>
         /// <param name="imageName"></param>
         /// <param name="description"></param>
-        public static partial void InsertInDictionary(ref Dictionary<uint, EventCard> dictionary,
+        public static partial void InsertInDictionary(ref Dictionary<uint, EventCardTemplate> dictionary,
                                                       string title,
                                                       uint priority,
                                                       string imageName,
                                                       string description)
         {
-            EventCard newCard = new EventCard(new EventCardProperties(title, priority, imageName, description));
+            UnityEngine.Sprite testSprite = Database.Get().GetAssetData().GetAssetSprite(imageName);
+
+            EventCardTemplate newCard = new EventCardTemplate(new EventCardProperties(title, priority, testSprite, description));
             dictionary.Add(newCard.GetId(), newCard);
         }
     }

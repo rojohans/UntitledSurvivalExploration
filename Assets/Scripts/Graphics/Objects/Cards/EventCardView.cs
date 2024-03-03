@@ -25,6 +25,13 @@ namespace usea.graphics.view
 
     public partial class EventCardView : MonoBehaviour
     {
+        /// <summary>
+        /// Updates the visual aspect of the card.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="priority"></param>
+        /// <param name="image"></param>
         public partial void ResetAppearance(string title, string description, uint priority, Sprite image)
         {
             m_title.SetText(title);
@@ -51,6 +58,5 @@ namespace usea.graphics.view
         {
             transform.localScale = new Vector3(newScale, newScale, newScale);
         }
-
     }
 }

@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using usea.data.gameplay;
 
 namespace usea.graphics.controller
 {
@@ -23,7 +24,7 @@ namespace usea.graphics.controller
         }
 
         // ###### PUBLIC ######
-        public partial uint VisualizeCard();
+        public partial uint VisualizeCard(EventCardProperties template);
         public partial void DevisualizeCard(uint id);
         public partial EventCardController GetCardById(uint id);
 
@@ -46,7 +47,7 @@ namespace usea.graphics.controller
         /// Visualizes a new card.
         /// </summary>
         /// <returns>ID of created card</returns>
-        public partial uint VisualizeCard()
+        public partial uint VisualizeCard(EventCardProperties template)
         {
             if (m_inactiveObjectIds.Count == 0)
             {
@@ -57,7 +58,9 @@ namespace usea.graphics.controller
 
             m_inactiveObjectIds.Remove(idToActivate);
             m_activeObjectIds.Add(idToActivate);
+
             m_objectPool[idToActivate].controller.Show();
+            m_objectPool[idToActivate].controller.ResetAppearance(template);
 
             return idToActivate;
         }
@@ -132,6 +135,7 @@ namespace usea.graphics.controller
             newObject.transform.localPosition = newVector;
 
             newEventCardController = newObject.GetComponent<EventCardController>();
+            newEventCardController.Show();
             newEventCardController.Hide();
 
             newObjectId = newEventCardController.GetId();
