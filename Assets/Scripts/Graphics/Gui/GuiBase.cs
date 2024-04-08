@@ -14,7 +14,13 @@ namespace usea.graphics.gui
         public partial void SetTooltip(string message);
 
         //###### PROTECTED ######
+        /// <summary>
+        /// Called on Awake. Cannot safely access other objects.
+        /// </summary>
         protected abstract void Constructor();
+        /// <summary>
+        /// Called on start. Can safely access other objects.
+        /// </summary>
         protected abstract void InitializeDependencies();
 
         //###### PRIVATE ######

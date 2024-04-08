@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -31,6 +32,8 @@ namespace usea.graphics.gui
         // ###### PUBLIC ######
         public partial void SetOnCallback(usea.util.types.Callback callback);
         public partial void SetOffCallback(usea.util.types.Callback callback);
+        public partial void ToggleOff();
+        public partial bool IsActive();
 
         // ###### PROTECTED ######
         protected override partial void Constructor();
@@ -39,6 +42,11 @@ namespace usea.graphics.gui
         // ###### PRIVATE ######
         private partial void SetInitialCallbacks();
         private partial void UpdateImageColours();
+
+        internal void AddOnPointerDownCallback()
+        {
+            throw new NotImplementedException();
+        }
 
         [Header("Colour")]
         [SerializeField] private ColourSettings m_backgroundColour;
@@ -54,14 +62,45 @@ namespace usea.graphics.gui
 
     public partial class Toggle : GuiBase
     {
+        /// <summary>
+        /// Set callback used when toggle activates.
+        /// </summary>
+        /// <param name="callback"></param>
         public partial void SetOnCallback(usea.util.types.Callback callback)
         {
             m_onCallback += callback;
         }
 
+        /// <summary>
+        /// Set callback used when toggle deactivates.
+        /// </summary>
+        /// <param name="callback"></param>
         public partial void SetOffCallback(usea.util.types.Callback callback)
         {
             m_offCallback += callback;
+        }
+
+        /// <summary>
+        /// Forcibly deactivates toggle state.
+        /// </summary>
+        public partial void ToggleOff()
+        {
+            if (m_state == ToggleState.ON)
+            {
+                m_state = ToggleState.OFF;
+            }
+
+            if (m_state == ToggleState.ON_HIGHLIGHT)
+            {
+                m_state = ToggleState.OFF_HIGHLIGHT;
+            }
+            UpdateImageColours();
+        }
+
+        public partial bool IsActive()
+        {
+            print(m_state);
+            return m_state == ToggleState.ON || m_state == ToggleState.ON_HIGHLIGHT;
         }
 
         protected override partial void Constructor()
@@ -80,10 +119,17 @@ namespace usea.graphics.gui
             };
             AddOnPointerDownCallback((PointerEventData eventData) =>
                 {
-                    m_state = m_state == ToggleState.ON_HIGHLIGHT
-                                ? ToggleState.OFF_HIGHLIGHT
-                                : ToggleState.ON_HIGHLIGHT;
-                    callbacks[m_state]?.Invoke();
+                    if (ToggleState.ON_HIGHLIGHT == m_state)
+                    {
+                        m_offCallback?.Invoke();
+                        m_state = ToggleState.OFF_HIGHLIGHT;
+                    }
+                    else if (ToggleState.OFF_HIGHLIGHT == m_state)
+                    {
+                        m_onCallback?.Invoke();
+                        m_state = ToggleState.ON_HIGHLIGHT;
+                    }
+
                     UpdateImageColours();
                 });
             AddOnPointerEnterCallback((PointerEventData eventData) =>
